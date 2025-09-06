@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本文化体験と探求 | 白林株式会社</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 设置字体为 Inter，以获得现代感 -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- ナビゲーションバー (导航栏) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+                <!-- 会社 ロゴ/名称 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                白林株式会社
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- デスクトップ版言語選択 -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <option value="ja" selected>日本語</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+                <div class="hidden md:flex space-x-6">
+                    <a href="services_ja.html" class="text-teal-500 font-medium transition-colors">サービス</a>
+                    <a href="about_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">会社概要</a>
+                    <a href="contact_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">お問い合わせ</a>
+                </div>
+                <!-- モバイルメニューボタン -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- モバイル版言語選択 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                <option value="ja" selected>日本語</option>
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <a href="services_ja.html" class="block px-6 py-2 text-teal-500 hover:bg-gray-100">サービス</a>
+            <a href="about_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">会社概要</a>
+            <a href="contact_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">お問い合わせ</a>
+        </div>
+    </nav>
+    
+    <!-- メインセクション -->
+    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">日本文化体験と探求</h2>
+            <div class="mt-12 max-w-4xl mx-auto text-center">
+                <p class="text-lg text-slate-600">
+                    日本文化を深く理解するための体験プログラムをご用意しました。
+                </p>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- サブページ 1: 中学生夏・冬期キャンプ -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">中学生向け夏・冬期キャンプ</h3>
+                    <p class="mt-4 text-slate-600">
+                        日本の歴史、文化、そして現代の生活を体験できる集中キャンプです。
+                    </p>
+                </div>
+
+                <!-- サブページ 2: コスプレ文化体験 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">コスプレ文化体験</h3>
+                    <p class="mt-4 text-slate-600">
+                        日本のポップカルチャーを代表するコスプレ文化を体験し、創造的な自己表現の楽しさを発見します。
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-white py-12 md:py-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">プライバシーポリシー</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">利用規約</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动端菜单和语言切换 -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+        
+        // 移动端菜单切换
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 语言切换功能
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            // 根据选择的语言重定向到对应的页面
+            if (selectedLanguage === 'ja') {
+                window.location.href = 'cultural-experiences_ja.html';
+            } else if (selectedLanguage === 'en') {
+                window.location.href = 'cultural-experiences_en.html';
+            } else if (selectedLanguage === 'zh') {
+                window.location.href = 'cultural-experiences.html';
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>

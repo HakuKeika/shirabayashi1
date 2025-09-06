@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要 | 白林株式会社</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 设置字体为 Inter，以获得现代感 -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- ナビゲーションバー (导航栏) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+                <!-- 会社 ロゴ/名称 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                白林株式会社
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- デスクトップ版言語選択 -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <option value="ja" selected>日本語</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+                <div class="hidden md:flex space-x-6">
+                    <a href="services_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">サービス</a>
+                    <a href="about_ja.html" class="text-teal-500 font-medium transition-colors">会社概要</a>
+                    <a href="contact_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">お問い合わせ</a>
+                </div>
+                <!-- モバイルメニューボタン -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- モバイル版言語選択 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                <option value="ja" selected>日本語</option>
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <a href="services_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">サービス</a>
+            <a href="about_ja.html" class="block px-6 py-2 text-teal-500 hover:bg-gray-100">会社概要</a>
+            <a href="contact_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">お問い合わせ</a>
+        </div>
+    </nav>
+    
+    <!-- 会社概要 -->
+    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">会社概要</h2>
+            <div class="mt-12 max-w-4xl mx-auto text-center">
+                <p class="text-lg text-slate-600">
+                    当社は2012年に設立されて以来、日本文化の普及に尽力してまいりました。同時に、日本に滞在する外国人が日本を効果的に理解し、文化に溶け込めるような関連サービスを提供しています。
+                </p>
+                <p class="mt-4 text-lg text-slate-600">
+                    当社の事業は多岐にわたり、国内外の商習慣、生活習慣、語学学習に関する研修・企画から、海外投資・経営・技術コンサルティングに関する会議の組織、国際芸術交流事業の企画・立案まで幅広く手掛けています。
+                </p>
+                <p class="mt-4 text-lg text-slate-600">
+                    また、EC事業、翻訳サービス、不動産の売買・賃貸・仲介・管理、私書箱サービス、ホテルやレンタルハウス等の宿泊施設運営も行っています。さらに、環境用品、電化製品、医療機器、医薬品、化粧品、食品、衣料品、日用雑貨、酒類、中古品の輸出入および販売、旅行業務、語学教室、飲食店経営、運送業、介護、労働者派遣、国際結婚、金融、美容院・整体院の経営、木材加工、資源廃棄物の回収など、多様な分野で事業を展開しています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-white py-12 md:py-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">プライバシーポリシー</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">利用規約</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动端菜单和语言切换 -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // 移动端菜单切换
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 语言切换功能
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            // 根据选择的语言重定向到对应的页面
+            if (selectedLanguage === 'ja') {
+                window.location.href = 'about_ja.html';
+            } else if (selectedLanguage === 'en') {
+                window.location.href = 'about_en.html';
+            } else if (selectedLanguage === 'zh') {
+                window.location.href = 'about.html';
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白林株式会社</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 设置字体为 Inter，以获得现代感 -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+
+        /* 主宣传区背景图片样式 */
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/4f5f6f/ffffff?text=Japanese+Garden');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* 渐变遮罩层，确保文本清晰可读 */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- ナビゲーションバー (导航栏) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+                <!-- 会社 ロゴ/名称 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                白林株式会社
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- デスクトップ版言語選択 -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <option value="ja" selected>日本語</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+                <div class="hidden md:flex space-x-6">
+                    <a href="services_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">サービス</a>
+                    <a href="about_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">会社概要</a>
+                    <a href="contact_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">お問い合わせ</a>
+                </div>
+                <!-- モバイルメニューボタン -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- モバイル版言語選択 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                <option value="ja" selected>日本語</option>
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <a href="services_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">サービス</a>
+            <a href="about_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">会社概要</a>
+            <a href="contact_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">お問い合わせ</a>
+        </div>
+    </nav>
+
+    <!-- メインセクション (Hero Section) -->
+    <header class="hero-bg text-white py-24 md:py-40 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10 animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-wide">白林株式会社へようこそ</h1>
+            <p class="mt-6 text-xl md:text-2xl font-light opacity-90">革新的なソリューションを提供し、お客様のビジネスをサポートします。</p>
+            <a href="services_ja.html" class="mt-10 inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">詳細はこちら</a>
+        </div>
+    </header>
+
+    <!-- サービス (我们的服务) - 摘要版 -->
+    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">サービス</h2>
+            <p class="mt-4 text-xl md:text-2xl font-light text-center text-slate-600">
+                日本文化の普及から海外とのビジネスサポートまで、お客様のニーズに応える幅広いサービスを提供しています。
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- サービスカード 1: 日本文化体験と探求 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">日本文化体験と探求</h3>
+                    <p class="mt-4 text-slate-600">茶道、華道、着物体験など、日本の奥深い文化に触れる機会を提供します。伝統と現代が融合した日本の魅力を発見してください。</p>
+                </div>
+                <!-- サービスカード 2: 日本語学習 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <line x1="10" y1="9" x2="8" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">日本語学習</h3>
+                    <p class="mt-4 text-slate-600">初心者から上級者まで、個々のレベルに合わせた日本語学習プログラムを提供します。経験豊富な講師陣が、あなたの日本語スキル向上をサポートします。</p>
+                </div>
+                <!-- サービスカード 3: 日本の不動産関連代行サービス -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">日本の不動産関連代行サービス</h3>
+                    <p class="mt-4 text-slate-600">物件探しから契約手続き、住宅ローンの手配まで、日本の不動産に関するあらゆる事務手続きを代行します。安心して日本での住まいを見つけられます。</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="services_ja.html" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">全サービスを見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 会社概要 (关于我们) - 摘要版 -->
+    <section class="py-16 md:py-24 bg-gray-200 animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">会社概要</h2>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <p class="text-lg text-slate-600">
+                        当社は2012年に設立されて以来、日本文化の普及に尽力してまいりました。同時に、日本に滞在する外国人が日本を効果的に理解し、文化に溶け込めるような関連サービスを提供しています。
+                    </p>
+                    <a href="about_ja.html" class="mt-6 inline-block text-teal-500 font-bold hover:underline transition-colors duration-300">会社概要を詳しく見る</a>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-slate-800">私たちのビジョン</h3>
+                    <p class="mt-4 text-lg text-slate-600">
+                        私たちのビジョンは、文化の壁を越え、人々がより豊かで、より繋がりのある生活を送れる世界を創造することです。私たちは、お客様一人ひとりの可能性を最大限に引き出すための最良のパートナーであり続けます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お客様の声 (客户评价) -->
+    <section class="py-16 md:py-24 bg-white animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">お客様の声</h2>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 評価 1 -->
+                <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <p class="text-lg text-slate-700 italic">"白林株式会社のサービスは本当に素晴らしいです。彼らのサポートのおかげで、日本での生活がとてもスムーズになりました。"</p>
+                    <div class="mt-6 font-bold text-teal-500">
+                        <p class="text-lg">佐藤 健太郎</p>
+                        <p class="text-sm font-normal text-slate-500">日本でのビジネスオーナー</p>
+                    </div>
+                </div>
+                <!-- 評価 2 -->
+                <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <p class="text-lg text-slate-700 italic">"日本語学習プログラムは非常に効果的でした。先生方がとても熱心で、楽しみながら学ぶことができました。"</p>
+                    <div class="mt-6 font-bold text-teal-500">
+                        <p class="text-lg">アリス・スミス</p>
+                        <p class="text-sm font-normal text-slate-500">外国人学生</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-white py-12 md:py-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">プライバシーポリシー</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">利用規約</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动端菜单和语言切换 -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // 移动端菜单切换
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 语言切换功能
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            // 根据选择的语言重定向到对应的页面
+            if (selectedLanguage === 'ja') {
+                window.location.href = 'index_ja.html';
+            } else if (selectedLanguage === 'en') {
+                window.location.href = 'index_en.html';
+            } else if (selectedLanguage === 'zh') {
+                window.location.href = 'index.html';
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>
+```
