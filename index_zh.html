@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白林株式会社</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 设置字体为 Inter，以获得现代感 -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+
+        .hero {
+            /* 背景图：日本庭院的柔和占位符 */
+            background-image: url('https://placehold.co/1920x1080/4f5f6f/ffffff?text=Japanese+Garden');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index_zh.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+                <!-- 公司 Logo/名称 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                白林株式会社
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- 桌面版语言选择 -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <option value="zh" selected>中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="en">English</option>
+                </select>
+                <div class="hidden md:flex space-x-6">
+                    <a href="services_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">服务</a>
+                    <a href="about_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">公司概要</a>
+                    <a href="contact_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">联系我们</a>
+                </div>
+                <!-- 移动菜单按钮 -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- 移动菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- 移动版语言选择 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                <option value="zh" selected>中文</option>
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+            </select>
+            <a href="services_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">服务</a>
+            <a href="about_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">公司概要</a>
+            <a href="contact_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">联系我们</a>
+        </div>
+    </nav>
+
+    <!-- 主宣传区 (Hero Section) -->
+    <header class="hero text-white h-screen flex items-center justify-center text-center px-4 md:px-0">
+        <div class="animate-fade-in bg-black bg-opacity-50 p-8 rounded-xl max-w-2xl mx-auto">
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight">欢迎来到白林株式会社</h1>
+            <p class="mt-4 text-lg md:text-xl font-light opacity-90">我们致力于传播日本文化的魅力，并为在日人士提供全方位的优质生活支持。</p>
+            <div class="mt-8 space-x-4">
+                <a href="about_zh.html" class="bg-teal-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">
+                    了解我们
+                </a>
+                <a href="contact_zh.html" class="bg-white text-teal-500 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-300 transform hover:scale-105">
+                    联系咨询
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 核心服务概述 -->
+    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">核心服务</h2>
+            <p class="mt-4 text-center text-lg text-slate-600">我们多元化的业务，助力您在日本的生活与事业取得成功。</p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 服务卡片 1: 日本文化体验 -->
+                <a href="cultural-experiences_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">日本文化体验与探索</h3>
+                    <p class="mt-4 text-slate-600">茶道、花道、动漫文化。深度体验日本传统与现代魅力。</p>
+                </a>
+                <!-- 服务卡片 2: 日语学习 -->
+                <a href="services_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <line x1="10" y1="9" x2="8" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">专业日语学习</h3>
+                    <p class="mt-4 text-slate-600">为不同水平的学员提供定制化、高效的日语培训课程。</p>
+                </a>
+                <!-- 服务卡片 3: 不动产代行 -->
+                <a href="services_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
+                    <div class="text-teal-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800">不动产事务代办</h3>
+                    <p class="mt-4 text-slate-600">提供在日本的房屋买卖、租赁、中介及管理的全套代办服务。</p>
+                </a>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="services_zh.html" class="bg-teal-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">
+                    查看全部服务
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 公司概要与使命 -->
+    <section class="py-16 md:py-24 bg-white animate-fade-in">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">公司概要</h2>
+                <p class="mt-4 text-slate-600">
+                    本公司成立于2012年，一直致力于日本文化的推广业务。同时为在日本的外国人能够有效理解日本、融入日本文化而提供相关的服务。公司的业务涵盖国际研修、投资咨询、艺术交流、电子商务、翻译、不动产、住宿设施经营和管理等多元领域。
+                </p>
+            </div>
+            <div class="md:text-right">
+                <h3 class="text-2xl font-bold text-slate-800">我们的使命</h3>
+                <p class="mt-4 text-slate-600">
+                    我们的使命是打破文化壁垒，让世界各地的人们都能在日本享受到丰富和成功的生活与事业。
+                </p>
+                <a href="about_zh.html" class="inline-block mt-6 bg-teal-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">
+                    了解更多
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户评价 -->
+    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">客户评价</h2>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-500">
+                    <p class="italic text-slate-600">“白林株式会社提供的日本语学习课程非常专业，让我快速适应了在日本的生活和工作环境。”</p>
+                    <p class="mt-4 font-semibold text-slate-800">- 王先生, 工程师</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-500">
+                    <p class="italic text-slate-600">“通过白林，我们成功找到了理想的房产并完成了所有复杂的法律手续，服务非常高效可靠。”</p>
+                    <p class="mt-4 font-semibold text-slate-800">- 李女士, 投资人</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-500">
+                    <p class="italic text-slate-600">“新西兰留学企划非常周到，为我的孩子提供了宝贵的文化交流经验。强烈推荐！”</p>
+                    <p class="mt-4 font-semibold text-slate-800">- 张先生, 企业家</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-900 text-white py-12 md:py-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">隐私政策</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">使用条款</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动菜单和语言切换 -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // 移动菜单切换
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 语言切换功能
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            // 根据选择的语言重定向到对应的页面
+            if (selectedLanguage === 'ja') {
+                window.location.href = 'index.html'; // 注意：日文主页现在是 index.html
+            } else if (selectedLanguage === 'en') {
+                window.location.href = 'index_en.html';
+            } else if (selectedLanguage === 'zh') {
+                window.location.href = 'index_zh.html';
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>
