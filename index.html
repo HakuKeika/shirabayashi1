@@ -228,11 +228,13 @@
             const selectedLanguage = event.target.value;
             // 根据选择的语言重定向到对应的页面
             if (selectedLanguage === 'ja') {
-                window.location.href = 'index_ja.html';
+                // 如果已在日语页，则保持在当前页面，不执行任何操作
+                return;
             } else if (selectedLanguage === 'en') {
                 window.location.href = 'index_en.html';
             } else if (selectedLanguage === 'zh') {
-                window.location.href = 'index.html';
+                // 修正：从 index.html 跳转到中文主页 index_zh.html
+                window.location.href = 'index_zh.html'; 
             }
         }
 
@@ -241,4 +243,3 @@
     </script>
 </body>
 </html>
-```
