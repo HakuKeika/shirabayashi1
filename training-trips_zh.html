@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>研修旅行项目 | 白林株式会社</title>
+    <title>研修旅行 | 白林株式会社</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 设置字体为 Inter，以获得现代感 -->
+    <!-- 设置字体为 Inter、以获得现代感 -->
     <style>
         @keyframes fadeIn {
             from {
@@ -49,7 +49,7 @@
                     <option value="en">English</option>
                 </select>
                 <div class="hidden md:flex space-x-6">
-                    <a href="services_zh.html" class="text-teal-500 font-medium transition-colors">服务</a>
+                    <a href="services_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">服务</a>
                     <a href="about_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">公司概要</a>
                     <a href="contact_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">联系我们</a>
                 </div>
@@ -69,40 +69,58 @@
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
             </select>
-            <a href="services_zh.html" class="block px-6 py-2 text-teal-500 hover:bg-gray-100">服务</a>
+            <a href="services_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">服务</a>
             <a href="about_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">公司概要</a>
             <a href="contact_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">联系我们</a>
         </div>
     </nav>
-    
-    <!-- 研修旅行项目 -->
+
+    <!-- 研修旅行页面主体 -->
     <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">研修旅行：深度学习项目</h2>
-            <p class="mt-4 text-center text-lg text-slate-600">我们提供聚焦于特定文化和技能提升的精品研修之旅。</p>
-
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- 项目 1: 日本庭园和庭园文化鉴赏 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl border-t-4 border-teal-500">
-                    <h3 class="text-2xl font-semibold text-slate-800">日本庭园和庭园文化鉴赏</h3>
-                    <p class="mt-4 text-slate-600">由资深庭园专家带领，深度考察日本著名庭园（如京都的禅宗庭园）。学习日式庭园的设计理念、历史背景和哲学思想，体验日式美学的精髓。</p>
-                    <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
-                        <li>专家讲座：深入解析枯山水、池泉回游式等庭园类型。</li>
-                        <li>实地考察：参观多处世界文化遗产级庭园。</li>
-                    </ul>
-                    <a href="contact_zh.html" class="inline-block mt-6 bg-teal-500 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-teal-600 transition-colors">立即咨询报名</a>
+            <!-- 面包屑导航 -->
+            <div class="text-sm text-slate-500 mb-8">
+                <a href="services_zh.html" class="hover:text-teal-500">服务</a> &gt; 研修旅行
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12">研修旅行项目</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                
+                <!-- 卡片 1: 日本庭园和庭园文化鉴赏 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <img src="https://placehold.co/800x450/334155/ffffff?text=Japanese+Garden" alt="日本庭园" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-3">日本庭园和庭园文化鉴赏</h2>
+                        <p class="text-slate-600 mb-4">
+                            深度探索日本庭园的历史、造园哲学和美学。由专业庭园设计师带领，在名园中学习鉴赏之道。
+                        </p>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1 mb-6">
+                            <li>专业设计师导览</li>
+                            <li>禅宗文化与枯山水解析</li>
+                            <li>实地写生与感悟体验</li>
+                        </ul>
+                        <a href="contact_zh.html" class="inline-block bg-teal-500 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300">了解详细</a>
+                    </div>
+                </div>
+                
+                <!-- 卡片 2: 日本高尔夫初级学习班 (链接已更新) -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <img src="https://placehold.co/800x450/10b981/ffffff?text=Golf+Course" alt="高尔夫学习班" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-3">日本高尔夫初级学习班</h2>
+                        <p class="text-slate-600 mb-4">
+                            为初学者量身打造，在日本专用练习场由持证教练进行系统化指导，快速掌握高尔夫基础。
+                        </p>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1 mb-6">
+                            <li>10天深度研修课程（5天教学+5天旅行）</li>
+                            <li>持证日本教练指导</li>
+                            <li>专用练习场训练，策略与礼仪并重</li>
+                        </ul>
+                        <a href="golf-beginner-class_zh.html" class="inline-block bg-teal-500 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300">了解详细</a>
+                    </div>
                 </div>
 
-                <!-- 项目 2: 日本高尔夫初级学习班 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl border-t-4 border-teal-500">
-                    <h3 class="text-2xl font-semibold text-slate-800">日本高尔夫初级学习班</h3>
-                    <p class="mt-4 text-slate-600">为初学者量身打造的高尔夫学习项目。在日本顶级高尔夫球场接受专业教练指导，从基础握杆、挥杆到礼仪文化，全面掌握高尔夫基础知识和技能。</p>
-                    <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
-                        <li>专业指导：小班教学，注重个人技术纠正。</li>
-                        <li>文化研修：学习高尔夫在日本的商业礼仪和社交文化。</li>
-                    </ul>
-                    <a href="contact_zh.html" class="inline-block mt-6 bg-teal-500 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-teal-600 transition-colors">了解详情</a>
-                </div>
             </div>
         </div>
     </section>
@@ -110,7 +128,7 @@
     <!-- 页脚 -->
     <footer class="bg-slate-900 text-white py-12 md:py-16">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <p>&copy; 2024 白林株式会社. 版权所有.</p>
             <div class="mt-4 space-x-4">
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">隐私政策</a>
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">使用条款</a>
