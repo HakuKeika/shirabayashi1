@@ -179,13 +179,30 @@
         // 语言切换功能
         function handleLanguageChange(event) {
             const selectedLanguage = event.target.value;
+            // 获取当前页面的文件名
+            const currentPage = window.location.pathname.split('/').pop();
+
             // 根据选择的语言重定向到对应的页面
             if (selectedLanguage === 'ja') {
-                window.location.href = 'contact_ja.html';
+                // 如果当前页面是 contact_zh.html，则应跳转到 contact_ja.html
+                // 我们使用 currentPage.replace 来确保文件名保持一致性，同时考虑主页的特殊命名
+                if (currentPage.includes('_zh.html')) {
+                    window.location.href = currentPage.replace('_zh.html', '_ja.html');
+                } else {
+                    // 如果在中文主页（index_zh.html）上，则跳转到日文主页（index.html）
+                    window.location.href = 'index.html'; 
+                }
             } else if (selectedLanguage === 'en') {
-                window.location.href = 'contact_en.html';
+                // 假设英文页面命名规则为 *_en.html
+                window.location.href = currentPage.replace('_zh.html', '_en.html');
             } else if (selectedLanguage === 'zh') {
-                window.location.href = 'contact_zh.html';
+                // 如果已在中文页，则不进行重定向
+                if (!currentPage.includes('_zh.html') && currentPage !== 'index_zh.html') {
+                   // 如果从日文/英文页面切换到中文，则需要跳转到对应的中文页面
+                   // 假设从日文页面切换到中文联系页面
+                   window.location.href = currentPage.replace('_ja.html', '_zh.html').replace('_en.html', '_zh.html');
+                }
+                // 如果已在中文页，则保持在当前页面，不执行任何操作
             }
         }
 
