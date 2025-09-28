@@ -28,11 +28,24 @@
             color: #334155;
         }
 
-        .hero {
-            /* 背景图：日本庭院的柔和占位符 */
+        /* 主宣传区背景图片样式 */
+        .hero-bg {
             background-image: url('https://placehold.co/1920x1080/4f5f6f/ffffff?text=Japanese+Garden');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* 渐变遮罩层，确保文本清晰可读 */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
@@ -82,40 +95,35 @@
         </div>
     </nav>
 
-    <!-- 主宣传区 (Hero Section) -->
-    <header class="hero text-white h-screen flex items-center justify-center text-center px-4 md:px-0">
-        <div class="animate-fade-in bg-black bg-opacity-50 p-8 rounded-xl max-w-2xl mx-auto">
-            <h1 class="text-3xl md:text-5xl font-bold tracking-tight">欢迎来到白林株式会社</h1>
-            <p class="mt-4 text-lg md:text-xl font-light opacity-90">我们致力于传播日本文化的魅力，并为在日人士提供全方位的优质生活支持。</p>
-            <div class="mt-8 space-x-4">
-                <a href="about_zh.html" class="bg-teal-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">
-                    了解我们
-                </a>
-                <a href="contact_zh.html" class="bg-white text-teal-500 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-300 transform hover:scale-105">
-                    联系咨询
-                </a>
-            </div>
+    <!-- 主宣传区 -->
+    <header class="hero-bg text-white py-24 md:py-40 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10 animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-wide">欢迎来到白林株式会社</h1>
+            <p class="mt-6 text-xl md:text-2xl font-light opacity-90">提供创新解决方案，支持您的业务发展。</p>
+            <a href="services_zh.html" class="mt-10 inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">了解更多</a>
         </div>
     </header>
 
-    <!-- 核心服务概述 -->
+    <!-- 服务 (我们的服务) - 摘要版 -->
     <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">核心服务</h2>
-            <p class="mt-4 text-center text-lg text-slate-600">我们多元化的业务，助力您在日本的生活与事业取得成功。</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">我们的服务</h2>
+            <p class="mt-4 text-xl md:text-2xl font-light text-center text-slate-600">
+                从日本文化的普及到海外商务支持，我们提供广泛的服务来满足您的需求。
+            </p>
             <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 服务卡片 1: 日本文化体验 -->
-                <a href="cultural-experiences_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
+                <!-- 服务卡片 1: 日本文化体验和探求 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-teal-500 mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-slate-800">日本文化体验与探索</h3>
-                    <p class="mt-4 text-slate-600">茶道、花道、动漫文化。深度体验日本传统与现代魅力。</p>
-                </a>
+                    <h3 class="text-xl font-semibold text-slate-800">日本文化体验与探求</h3>
+                    <p class="mt-4 text-slate-600">提供接触日本深层文化的机会，如茶道、花道和服饰体验等。发现传统与现代融合的日本魅力。</p>
+                </div>
                 <!-- 服务卡片 2: 日语学习 -->
-                <a href="services_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-teal-500 mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -125,75 +133,77 @@
                             <line x1="10" y1="9" x2="8" y2="9"></line>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-slate-800">专业日语学习</h3>
-                    <p class="mt-4 text-slate-600">为不同水平的学员提供定制化、高效的日语培训课程。</p>
-                </a>
-                <!-- 服务卡片 3: 不动产代行 -->
-                <a href="services_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
+                    <h3 class="text-xl font-semibold text-slate-800">日语学习</h3>
+                    <p class="mt-4 text-slate-600">提供适合从初学者到高级学习者的日语学习课程。经验丰富的讲师团队，助力您提升日语技能。</p>
+                </div>
+                <!-- 服务卡片 3: 日本房屋相关事务代办 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-teal-500 mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-slate-800">不动产事务代办</h3>
-                    <p class="mt-4 text-slate-600">提供在日本的房屋买卖、租赁、中介及管理的全套代办服务。</p>
-                </a>
+                    <h3 class="text-xl font-semibold text-slate-800">日本房屋相关事务代办</h3>
+                    <p class="mt-4 text-slate-600">从房屋搜索到合同签订，以及房贷办理，代办日本不动产相关的一切手续。让您在日本安心置业。</p>
+                </div>
             </div>
             <div class="mt-12 text-center">
-                <a href="services_zh.html" class="bg-teal-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">
-                    查看全部服务
-                </a>
+                <a href="services_zh.html" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">查看所有服务</a>
             </div>
         </div>
     </section>
 
-    <!-- 公司概要与使命 -->
-    <section class="py-16 md:py-24 bg-white animate-fade-in">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">公司概要</h2>
-                <p class="mt-4 text-slate-600">
-                    本公司成立于2012年，一直致力于日本文化的推广业务。同时为在日本的外国人能够有效理解日本、融入日本文化而提供相关的服务。公司的业务涵盖国际研修、投资咨询、艺术交流、电子商务、翻译、不动产、住宿设施经营和管理等多元领域。
-                </p>
-            </div>
-            <div class="md:text-right">
-                <h3 class="text-2xl font-bold text-slate-800">我们的使命</h3>
-                <p class="mt-4 text-slate-600">
-                    我们的使命是打破文化壁垒，让世界各地的人们都能在日本享受到丰富和成功的生活与事业。
-                </p>
-                <a href="about_zh.html" class="inline-block mt-6 bg-teal-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105">
-                    了解更多
-                </a>
+    <!-- 公司概要 (关于我们) - 摘要版 -->
+    <section class="py-16 md:py-24 bg-gray-200 animate-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">公司概要</h2>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <p class="text-lg text-slate-600">
+                        本公司成立于2012年，一直致力于日本文化的推广业务。同时为在日本的外国人能够有效的理解日本，融入日本文化而提供相关的服务。
+                    </p>
+                    <a href="about_zh.html" class="mt-6 inline-block text-teal-500 font-bold hover:underline transition-colors duration-300">了解更多公司信息</a>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-slate-800">我们的愿景</h3>
+                    <p class="mt-4 text-lg text-slate-600">
+                        我们的愿景是跨越文化障碍，创造一个人们可以过上更富裕、更紧密联系的生活的世界。我们将始终是您充分发挥潜力的最佳合作伙伴。
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 客户评价 -->
-    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+    <section class="py-16 md:py-24 bg-white animate-fade-in">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">客户评价</h2>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-500">
-                    <p class="italic text-slate-600">“白林株式会社提供的日本语学习课程非常专业，让我快速适应了在日本的生活和工作环境。”</p>
-                    <p class="mt-4 font-semibold text-slate-800">- 王先生, 工程师</p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 评价 1 -->
+                <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <p class="text-lg text-slate-700 italic">"白林株式会社的服务非常棒。在他们的支持下，我在日本的生活非常顺利。"</p>
+                    <div class="mt-6 font-bold text-teal-500">
+                        <p class="text-lg">佐藤 健太郎</p>
+                        <p class="text-sm font-normal text-slate-500">日本企业主</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-500">
-                    <p class="italic text-slate-600">“通过白林，我们成功找到了理想的房产并完成了所有复杂的法律手续，服务非常高效可靠。”</p>
-                    <p class="mt-4 font-semibold text-slate-800">- 李女士, 投资人</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-500">
-                    <p class="italic text-slate-600">“新西兰留学企划非常周到，为我的孩子提供了宝贵的文化交流经验。强烈推荐！”</p>
-                    <p class="mt-4 font-semibold text-slate-800">- 张先生, 企业家</p>
+                <!-- 评价 2 -->
+                <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <p class="text-lg text-slate-700 italic">"日语学习项目非常有效。老师们非常热情，我学得很高兴。"</p>
+                    <div class="mt-6 font-bold text-teal-500">
+                        <p class="text-lg">艾丽斯·史密斯</p>
+                        <p class="text-sm font-normal text-slate-500">外国留学生</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- 页脚 -->
     <footer class="bg-slate-900 text-white py-12 md:py-16">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <p>&copy; 2024 白林株式会社. 版权所有.</p>
             <div class="mt-4 space-x-4">
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">隐私政策</a>
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">使用条款</a>
@@ -216,13 +226,19 @@
         // 语言切换功能
         function handleLanguageChange(event) {
             const selectedLanguage = event.target.value;
+            // 获取当前页面的文件名
+            const currentPage = window.location.pathname.split('/').pop();
+
             // 根据选择的语言重定向到对应的页面
             if (selectedLanguage === 'ja') {
-                window.location.href = 'index.html'; // 注意：日文主页现在是 index.html
+                // 如果在中文主页（index_zh.html）上，则跳转到日文主页（index.html）
+                window.location.href = 'index.html'; 
             } else if (selectedLanguage === 'en') {
-                window.location.href = 'index_en.html';
+                // 假设英文页面命名规则为 *_en.html
+                window.location.href = currentPage.replace('_zh.html', '_en.html');
             } else if (selectedLanguage === 'zh') {
-                window.location.href = 'index_zh.html';
+                // 如果已在中文页，则保持在当前页面，不执行任何操作
+                return;
             }
         }
 
