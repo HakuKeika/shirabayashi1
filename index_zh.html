@@ -30,13 +30,16 @@
 
         /* 主宣传区背景图片样式 */
         .hero-bg {
-            background-image: url('https://placehold.co/1920x1080/4f5f6f/ffffff?text=Japanese+Garden');
-            background-size: cover;
-            background-position: center;
+            background-image: url('首页图片.jpg');
+            background-size: cover; 
+            /* 修正 2: 确保图片居中 */
+            background-position: center; 
+            /* 修正 3: 防止图片重复平铺 */
+            background-repeat: no-repeat; 
+            /* 保持背景固定 */
             background-attachment: fixed;
             position: relative;
         }
-
         /* 渐变遮罩层，确保文本清晰可读 */
         .hero-bg::before {
             content: '';
@@ -247,3 +250,4 @@
     </script>
 </body>
 </html>
+
