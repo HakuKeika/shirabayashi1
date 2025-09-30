@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不动产维护管理 | 白林株式会社</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+        .section-header {
+            border-left: 5px solid #00afa0; /* Teal accent */
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .service-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00afa0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index_zh.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+                <!-- 公司 Logo/名称 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                白林株式会社
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- 桌面版语言选择 -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <option value="zh" selected>中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="en">English</option>
+                </select>
+                <div class="hidden md:flex space-x-6">
+                    <a href="services_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">服务</a>
+                    <a href="about_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">公司概要</a>
+                    <a href="contact_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">联系我们</a>
+                </div>
+                <!-- 移动菜单按钮 -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- 移动菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- 移动版语言选择 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                <option value="zh" selected>中文</option>
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+            </select>
+            <a href="services_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">服务</a>
+            <a href="about_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">公司概要</a>
+            <a href="contact_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">联系我们</a>
+        </div>
+    </nav>
+
+    <!-- 主体内容 -->
+    <section class="py-12 md:py-20 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <!-- 面包屑导航 -->
+            <div class="text-sm text-slate-500 mb-6">
+                <a href="services_zh.html" class="hover:text-teal-500">服务</a> &gt; 不动产维护管理
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-3">
+                🏡 日本不动产维护管理服务
+            </h1>
+            <p class="text-xl text-teal-600 mb-10 font-medium">
+                确保您的资产稳定增值，为您解决异地管理的一切后顾之忧。
+            </p>
+
+            <img src="https://placehold.co/1000x400/00afa0/ffffff?text=Real+Estate+Maintenance" alt="不动产维护管理图片" class="w-full h-auto rounded-xl shadow-2xl mb-12">
+
+            <!-- 核心服务内容 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 section-header">什么是日本不动产维护管理？</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    不动产维护管理是指在租赁合同期间，对房屋及相关设备进行维护和管理，以确保房屋的使用功能、居住环境以及资产价值。在日本，这是业主稳定获得租金收益和规避法律风险的关键。
+                </p>
+
+                <h3 class="text-2xl font-bold text-slate-800 section-header">我们的代行管理服务范围</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-teal-600 mb-3">1. 租客管理与代收租金</h4>
+                        <ul class="service-list text-slate-600">
+                            <li>租金代收、账单催缴、费用缴纳的**全流程处理**。</li>
+                            <li>处理租客的日常投诉、报修、退租等**突发事件**。</li>
+                            <li>确保租金及时入账，定期向业主提交**财务报表**。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-teal-600 mb-3">2. 设施维护与修缮</h4>
+                        <ul class="service-list text-slate-600">
+                            <li>定期的房屋**日常点检**，包括水、电、煤气等公共设备的维护。</li>
+                            <li>代为安排专业人员进行**紧急故障排除**和设备修缮。</li>
+                            <li>提供房屋的**定期清扫和美化**服务（如空置期间）。</li>
+                            <!-- 新增内容 -->
+                            <li>房屋外部的**杂草处理**及庭院基础维护。</li>
+                            <li>协助处理各类**生活垃圾的清理和分类**事宜。</li>
+                            <!-- 结束新增内容 -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-3">3. 法律支持与代办服务</h4>
+                    <ul class="service-list text-slate-600">
+                        <li>协助处理与租客或管理公司之间的**法律纠纷**和合同问题。</li>
+                        <!-- 新增内容 -->
+                        <li>提供**日语翻译服务**，确保所有合同、通知和沟通无障碍。</li>
+                        <!-- 结束新增内容 -->
+                        <li>代办租客退租时的**房屋检查、押金结算**及房屋恢复原状（原状回复）等手续。</li>
+                        <li>确保遵守日本的《借地借家法》等相关法律法规。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 联系我们 CTA -->
+            <div class="text-center mt-12">
+                <p class="text-2xl font-bold text-slate-800 mb-6">交给我们，省心省力，享受资产增值</p>
+                <a href="contact_zh.html" class="inline-block bg-teal-500 text-white font-bold py-4 px-10 rounded-full shadow-2xl hover:bg-teal-600 transition-colors duration-300 transform hover:scale-105 text-xl">
+                    立即咨询不动产管理方案
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-900 text-white py-12 md:py-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 白林株式会社. 版权所有.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">隐私政策</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">使用条款</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 用于移动菜单和语言切换 -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // 移动菜单切换
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 语言切换功能
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            // 根据选择的语言重定向到对应的页面
+            if (selectedLanguage === 'ja') {
+                window.location.href = 'real-estate-maintenance_ja.html';
+            } else if (selectedLanguage === 'en') {
+                window.location.href = 'real-estate-maintenance_en.html';
+            } else if (selectedLanguage === 'zh') {
+                window.location.href = 'real-estate-maintenance_zh.html';
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>
