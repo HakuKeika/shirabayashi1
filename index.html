@@ -28,12 +28,17 @@
             color: #334155;
         }
 
-        /* 主宣传区背景图片样式 */
+        /* 主宣传区背景图片样式：已修正 */
         .hero-bg {
             background-image: url('首页图片.jpg');
-            background-size: ;
-            background-position: center;
-            background-attachment: ;
+            /* 修正 1: 确保图片覆盖整个区域 */
+            background-size: cover; 
+            /* 修正 2: 确保图片居中 */
+            background-position: center; 
+            /* 修正 3: 防止图片重复平铺 */
+            background-repeat: no-repeat; 
+            /* 保持背景固定 */
+            background-attachment: fixed;
             position: relative;
         }
 
@@ -243,6 +248,3 @@
     </script>
 </body>
 </html>
-
-
-
