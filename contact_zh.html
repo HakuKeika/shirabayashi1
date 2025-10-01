@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联系我们 - 白林株式会社</title>
+    <title>联系我们 | 白林株式会社</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 设置字体和配色风格 -->
@@ -15,10 +15,10 @@
         }
 
         /* 强调色定义 */
-        .color-primary { background-color: #3b82f6; } /* Blue-500 */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
         .color-primary-text { color: #3b82f6; }
         .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
-
+        
         /* 自定义成功消息框的样式 */
         .success-message {
             position: fixed;
@@ -35,12 +35,10 @@
 </head>
 <body class="bg-gray-50 text-slate-800">
 
-    <!-- 导航栏 (Logo 颜色已统一) -->
+    <!-- 导航栏 (与 index_zh.html 保持一致) -->
     <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <!-- 修正：确保整个“白林株式会社”文字部分统一为黑色 text-slate-800 -->
             <a href="index_zh.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
-                <!-- 仅保留 Logo 图标的颜色 -->
                 <span class="text-slate-800">白林株式会社</span>
             </a>
             <div class="flex items-center space-x-6">
@@ -78,72 +76,86 @@
         </div>
     </nav>
 
-    <!-- 页面标题 -->
-    <header class="bg-white shadow-md py-12">
-        <div class="container mx-auto px-6">
-            <!-- 面包屑导航 -->
-            <div class="text-sm text-slate-500 mb-2">
-                <a href="index_zh.html" class="hover:text-blue-500">首页</a> &gt; 联系我们
-            </div>
-            <h1 class="text-4xl font-extrabold color-primary-text">联系我们</h1>
-            <p class="mt-3 text-lg text-slate-600">请留下您的信息，我们专业的团队将尽快与您取得联系。</p>
+    <!-- お問い合わせ (联系我们) -->
+    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">联系我们</h2>
+            <p class="mt-4 text-xl md:text-2xl font-light opacity-90">如有任何疑问或合作意向，请随时与我们联系。</p>
         </div>
-    </header>
-
-    <!-- 联系表单 -->
-    <section class="py-16 md:py-24 bg-gray-100">
         <div class="container mx-auto px-6 mt-12 max-w-2xl">
-            <!-- Netlify Forms 集成：name 属性是 Netlify 识别的关键 -->
-            <form id="contact-form-zh" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-red-500">
-                <!-- 隐藏的 Honeypot 字段用于防垃圾邮件 -->
-                <p class="hidden">
-                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                </p>
+            <!-- Netlify 表单配置：将数据发送到 info@shirabayashi.jp -->
+            <form id="contact-form-zh" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                  action="/contact_zh.html" class="bg-white p-8 rounded-2xl shadow-lg">
+                
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="redirectTo" value="contact_zh.html?success=true" />
+                
+                <!-- 确保 Netlify 将邮件发送到 info@shirabayashi.jp -->
+                <input type="hidden" name="_to" value="info@shirabayashi.jp" />
 
+                <!-- 咨询类别 -->
                 <div class="mb-6">
                     <label for="inquiry-type-zh" class="block text-gray-700 font-semibold mb-2">咨询类型</label>
-                    <select id="inquiry-type-zh" name="咨询类型" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                        <option value="">请选择咨询类别</option>
-                        <option value="service-inquiry">服务项目咨询</option>
-                        <option value="cooperation">提携与合作</option>
-                        <option value="media-relations">媒体采访与公关</option>
-                        <option value="recruitment">招聘与职位咨询</option>
-                        <option value="billing">账单与费用支付</option>
+                    <select id="inquiry-type-zh" name="咨询类型" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">请选择</option>
+                        <option value="service-inquiry">服务查询</option>
+                        <option value="cooperation">合作与提携</option>
+                        <option value="media-relations">媒体报道</option>
+                        <option value="recruitment">招聘咨询</option>
+                        <option value="billing">账单/付款问题</option>
                         <option value="technical-support">技术支持</option>
                         <option value="report-issue">问题报告</option>
-                        <option value="complaint">意见与投诉</option>
-                        <option value="general">其他一般咨询</option>
+                        <option value="complaint">意见/投诉</option>
+                        <option value="general">其他</option>
                     </select>
                 </div>
-                
+
+                <!-- 姓名 -->
                 <div class="mb-6">
-                    <label for="name-zh" class="block text-gray-700 font-semibold mb-2">您的姓名</label>
+                    <label for="name-zh" class="block text-gray-700 font-semibold mb-2">姓名</label>
                     <input type="text" id="name-zh" name="姓名" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
+                
+                <!-- 邮箱 -->
                 <div class="mb-6">
                     <label for="email-zh" class="block text-gray-700 font-semibold mb-2">电子邮件</label>
-                    <input type="email" id="email-zh" name="电子邮件" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                </div>
-                <div class="mb-6">
-                    <label for="subject-zh" class="block text-gray-700 font-semibold mb-2">主题</label>
-                    <input type="text" id="subject-zh" name="主题" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-                <div class="mb-6">
-                    <label for="message-zh" class="block text-gray-700 font-semibold mb-2">详细咨询内容</label>
-                    <textarea id="message-zh" name="内容" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    <input type="email" id="email-zh" name="邮箱" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
                 
-                <button type="submit" class="w-full color-primary text-white font-bold py-3 px-4 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300 transform hover:scale-105">
-                    提交咨询
+                <!-- 手机 -->
+                <div class="mb-6">
+                    <label for="subject-zh" class="block text-gray-700 font-semibold mb-2">主题 (可选)</label>
+                    <input type="text" id="subject-zh" name="主题" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                
+                <!-- 内容 -->
+                <div class="mb-6">
+                    <label for="message-zh" class="block text-gray-700 font-semibold mb-2">咨询内容</label>
+                    <textarea id="message-zh" name="咨询内容" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-red-500 text-white font-bold py-3 px-4 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                    提交
                 </button>
             </form>
-
-            <!-- 成功消息框（Netlify 默认会重定向，此处作为备用） -->
-            <!-- 如果想在 Netlify 上使用自定义成功信息，需要配置 Netlify Forms -->
+            
+            <!-- 成功消息（通常由 Netlify 自动重定向处理） -->
+            <!-- 仅在 URL 中包含 ?success=true 时显示，作为备用或二次确认 -->
+            <div id="success-message-zh" class="success-message hidden">
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-8.87"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <p class="text-lg font-bold text-gray-800">提交成功！</p>
+                    <p class="mt-2 text-gray-600">我们已收到您的信息，工作人员将尽快回复您。</p>
+                    <button onclick="document.getElementById('success-message-zh').classList.add('hidden');" class="mt-4 text-blue-500 hover:underline">关闭</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- フッター (Footer - 与 index_zh.html 保持一致) -->
+    <!-- フッター (Footer) -->
     <footer class="bg-slate-900 text-white py-10">
         <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
@@ -173,15 +185,12 @@
             const currentPath = window.location.pathname;
             let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
-            // Determine the base filename (e.g., contact)
+            // Determine the base filename (e.g., contact_zh.html -> contact)
             let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
             if (baseFile === currentFile || baseFile === "") {
                 baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
             }
-            if (baseFile === 'contact') {
-                baseFile = 'contact'; // Ensure base name is correct
-            }
-
+            
             // Construct the new URL
             let newFile = '';
             if (selectedLanguage === 'ja') {
@@ -199,6 +208,17 @@
 
         languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
         languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+        
+        // 成功消息显示逻辑 (基于 URL 参数)
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('success-message-zh').classList.remove('hidden');
+        }
+
+        // 提交成功后清除 URL 参数，防止刷新重复显示
+        if (window.history.replaceState) {
+            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({path: cleanUrl}, '', cleanUrl);
+        }
     </script>
 </body>
 </html>
