@@ -3,55 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>日本文化体验和探求 | 白林株式会社</title>
+    <title>日本文化体验与探求 - 白林株式会社</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 设置字体和配色风格 -->
     <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
-            color: #334155;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* 强调色定义 */
+        .color-primary { background-color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .service-card {
+            border-left-width: 4px;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-slate-800">
 
-    <!-- 导航栏 -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index_zh.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
-                <!-- 公司 Logo/名称 -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                白林株式会社
+    <!-- 导航栏 (与 index_zh.html 保持一致) -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index_zh.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
+                <span class="text-blue-600 text-3xl mr-1">白</span>
+                林株式会社
             </a>
             <div class="flex items-center space-x-6">
+                <!-- 桌面版菜单 -->
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_zh.html" class="text-blue-600 hover:text-blue-600 transition-colors">服务</a>
+                    <a href="about_zh.html" class="text-slate-600 hover:text-blue-600 transition-colors">公司概要</a>
+                    <a href="contact_zh.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">联系我们</a>
+                </div>
                 <!-- 桌面版语言选择 -->
-                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="zh" selected>中文</option>
                     <option value="ja">日本語</option>
                     <option value="en">English</option>
                 </select>
-                <div class="hidden md:flex space-x-6">
-                    <a href="services_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">服务</a>
-                    <a href="about_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">公司概要</a>
-                    <a href="contact_zh.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">联系我们</a>
-                </div>
                 <!-- 移动菜单按钮 -->
                 <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,93 +64,130 @@
             </select>
             <a href="services_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">服务</a>
             <a href="about_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">公司概要</a>
-            <a href="contact_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">联系我们</a>
+            <a href="contact_zh.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">联系我们</a>
         </div>
     </nav>
-    
-    <!-- 主体内容 -->
-    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+
+    <!-- 页面标题 -->
+    <header class="bg-white shadow-md py-12">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">日本文化体验项目</h2>
-            <p class="mt-4 text-center text-lg text-slate-600">深度体验日本的传统与现代文化，我们提供沉浸式的学习和探访之旅。</p>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- 卡片 1: 中学生夏、冬令营 -->
-                <a href="student-camps_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block border-t-4 border-teal-500">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="8.5" cy="7" r="4"></circle>
-                            <path d="M20 8v6"></path>
-                            <path d="M23 11H17"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">中学生夏/冬令营</h3>
-                    <p class="mt-4 text-slate-600">专为中学生设计的沉浸式学习项目，结合语言、文化课程和实地考察。</p>
-                    <span class="mt-4 text-teal-500 font-bold block">了解详细 &rarr;</span>
-                </a>
-
-                <!-- 卡片 2: Cosplay 文化体验 -->
-                <a href="cosplay-experience_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block border-t-4 border-teal-500">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path>
-                            <path d="M12 16a4 4 0 0 0 4-4 4 4 0 0 0-4-4z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">Cosplay 文化体验</h3>
-                    <p class="mt-4 text-slate-600">在大阪体验动漫角色的制作、化妆和实景拍摄，深入日本流行文化前沿。</p>
-                    <span class="mt-4 text-teal-500 font-bold block">了解详细 &rarr;</span>
-                </a>
-
-                <!-- 卡片 3: 日本漫画朝圣之旅 (新增加) -->
-                <a href="manga-tour_zh.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block border-t-4 border-teal-500">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 3h10v18H2zM12 3h10v18H12zM7 8h5M7 16h5M17 8h5M17 16h5"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">日本漫画朝圣之旅</h3>
-                    <p class="mt-4 text-slate-600">深度探访经典动漫作品的灵感地和打卡点，感受二次元文化的独特魅力。</p>
-                    <span class="mt-4 text-teal-500 font-bold block">了解详细 &rarr;</span>
-                </a>
+            <!-- 面包屑导航 -->
+            <div class="text-sm text-slate-500 mb-2">
+                <a href="services_zh.html" class="hover:text-blue-500">服务</a> &gt; 日本文化体验与探求
             </div>
+            <h1 class="text-4xl font-extrabold color-primary-text">日本文化体验与探求</h1>
+            <p class="mt-3 text-lg text-slate-600">从传统艺术到现代流行文化，提供多样化的深度体验和研学项目。</p>
+        </div>
+    </header>
+
+    <!-- 服务列表 -->
+    <main class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 1. 中学生夏、冬令营 (Student Camps) -->
+            <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 service-card border-red-500">
+                <div class="text-red-600 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">中学生夏、冬令营</h3>
+                <p class="text-slate-600 text-sm">针对中学生设计的日本文化、语言及科技主题营地，融合学习与实践的深度研学之旅。</p>
+                <a href="student-camps_zh.html" class="mt-4 inline-block text-red-500 font-semibold text-sm hover:underline">了解详情 &gt;</a>
+            </div>
+
+            <!-- 2. Cosplay 文化体验 (Cosplay) -->
+            <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 service-card border-red-500">
+                <div class="text-red-600 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.92 14.614c.264 1.134-1.077 2.128-2.607 2.128-1.53 0-3.327-.994-3.591-2.128-1.748.24-3.181 1.706-3.181 3.513 0 2.062 1.678 3.737 3.75 3.737s3.75-1.675 3.75-3.737c0-1.807-1.433-3.273-3.181-3.513zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Cosplay 文化体验</h3>
+                <p class="text-sm text-slate-600">大阪热门Cosplay场景深度体验，专业摄影与关西四城（大阪、京都、名古屋、奈良）精品旅行。</p>
+                <a href="cosplay-experience_zh.html" class="mt-4 inline-block text-red-500 font-semibold text-sm hover:underline">了解详情 &gt;</a>
+            </div>
+            
+            <!-- 3. 日本漫画朝圣之旅 (Manga Tour) -->
+            <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 service-card border-red-500">
+                <div class="text-red-600 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">日本漫画朝圣之旅</h3>
+                <p class="text-sm text-slate-600">深度探访日本知名漫画家的故居、主题博物馆及经典打卡地，感受动漫文化的根源与魅力。</p>
+                <a href="manga-tour_zh.html" class="mt-4 inline-block text-red-500 font-semibold text-sm hover:underline">了解详情 &gt;</a>
+            </div>
+
+            <!-- 4. 传统文化体验 (General Culture) -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                <div class="text-red-600 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 6l-6 6-6-6"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">传统艺术研习</h3>
+                <p class="text-sm text-slate-600">提供茶道、花道、和服穿着、书法等传统日式艺术的短期研习课程和体验活动。</p>
+                <a href="contact_zh.html" class="mt-4 inline-block text-red-500 font-semibold text-sm hover:underline">联系我们 &gt;</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- お問い合わせ CTA (Call to Action) -->
+    <section class="py-16 color-secondary text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">定制您的文化之旅</h2>
+            <p class="text-lg mb-8">如果您有特定的文化体验需求，请告诉我们，我们将为您量身定制。</p>
+            <a href="contact_zh.html" class="inline-block bg-white text-red-500 font-bold py-3 px-10 rounded-full shadow-2xl hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
+                立即咨询
+            </a>
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer class="bg-slate-900 text-white py-12 md:py-16">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 白林株式会社. 版权所有.</p>
-            <div class="mt-4 space-x-4">
+    <!-- フッター (Footer - 与 index_zh.html 保持一致) -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-3 space-x-4">
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">隐私政策</a>
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">使用条款</a>
+                <a href="about_zh.html" class="text-slate-400 hover:text-white transition-colors">公司概要</a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript 用于移动菜单和语言切换 -->
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
     <script>
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
         const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
 
-        // 移动菜单切换
+        // Toggle mobile menu
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
         
-        // 语言切换功能
+        // Language switching logic
         function handleLanguageChange(event) {
             const selectedLanguage = event.target.value;
-            // 根据选择的语言重定向到对应的页面
+            // Get the current page filename (e.g., cultural-experiences_zh.html)
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+            // Determine the base filename 
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                // Handle base files (like index.html or services.html)
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+
+            // Construct the new URL
+            let newFile = '';
             if (selectedLanguage === 'ja') {
-                window.location.href = 'cultural-experiences_ja.html';
+                newFile = (baseFile === 'index' || baseFile === 'index_zh') ? 'index.html' : baseFile + '_ja.html';
             } else if (selectedLanguage === 'en') {
-                window.location.href = 'cultural-experiences_en.html';
+                newFile = baseFile + '_en.html';
             } else if (selectedLanguage === 'zh') {
-                window.location.href = 'cultural-experiences_zh.html';
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
             }
         }
 
