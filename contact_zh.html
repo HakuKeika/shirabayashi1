@@ -83,12 +83,13 @@
             <p class="mt-4 text-xl md:text-2xl font-light opacity-90">如有任何疑问或合作意向，请随时与我们联系。</p>
         </div>
         <div class="container mx-auto px-6 mt-12 max-w-2xl">
-            <!-- Netlify 表单配置：将数据发送到 info@shirabayashi.jp -->
+            <!-- Netlify 表单配置：已移除 action 属性 -->
             <form id="contact-form-zh" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-                  action="/contact_zh.html" class="bg-white p-8 rounded-2xl shadow-lg">
+                  class="bg-white p-8 rounded-2xl shadow-lg">
                 
                 <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="redirectTo" value="contact_zh.html?success=true" />
+                <!-- 重定向到成功消息，URL 后添加 ?success=true -->
+                <input type="hidden" name="redirectTo" value="/contact_zh.html?success=true" />
                 
                 <!-- 确保 Netlify 将邮件发送到 info@shirabayashi.jp -->
                 <input type="hidden" name="_to" value="info@shirabayashi.jp" />
@@ -122,7 +123,7 @@
                     <input type="email" id="email-zh" name="邮箱" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
                 
-                <!-- 手机 -->
+                <!-- 主题 -->
                 <div class="mb-6">
                     <label for="subject-zh" class="block text-gray-700 font-semibold mb-2">主题 (可选)</label>
                     <input type="text" id="subject-zh" name="主题" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -139,8 +140,7 @@
                 </button>
             </form>
             
-            <!-- 成功消息（通常由 Netlify 自动重定向处理） -->
-            <!-- 仅在 URL 中包含 ?success=true 时显示，作为备用或二次确认 -->
+            <!-- 成功消息（用于 URL 参数 ?success=true 时的显示） -->
             <div id="success-message-zh" class="success-message hidden">
                 <div class="text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
