@@ -10,18 +10,44 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light Gray */
-            color: #1e293b; /* Dark Slate */
+            background-color: #f8fafc;
+            color: #1e293b;
         }
-        .color-primary { color: #3b82f6; } /* Blue-500 */
+        .color-primary { color: #3b82f6; } 
         .color-primary-text { color: #3b82f6; }
-        .service-card {
-            transition: all 0.3s ease;
-            border-left-width: 4px;
+        
+        .card-link {
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            text-decoration: none;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
+        .card-link:hover {
+            transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 步骤表格样式 */
+        .step-table th, .step-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+            vertical-align: middle;
+        }
+        .step-table th {
+            width: 150px;
+            background-color: #e0f2f1; /* 浅青色背景 */
+            color: #0d9488; /* 深青色文字 */
+            font-weight: 700;
+        }
+        .step-table td {
+            background-color: white;
+            color: #475569;
+        }
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-right: 1rem;
         }
     </style>
 </head>
@@ -33,12 +59,14 @@
             <a href="index_zh.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
                 <span class="text-slate-800">白林株式会社</span>
             </a>
+            <!-- 桌面版菜单 -->
             <div class="flex items-center space-x-6">
                 <div class="hidden md:flex space-x-4 text-sm font-medium">
                     <a href="services_zh.html" class="text-slate-600 hover:text-blue-600 transition-colors">服务</a>
                     <a href="about_zh.html" class="text-slate-600 hover:text-blue-600 transition-colors">公司概要</a>
                     <a href="contact_zh.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">联系我们</a>
                 </div>
+                <!-- 语言选择 -->
                 <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="zh" selected>中文</option>
                     <option value="ja">日本語</option>
@@ -47,86 +75,137 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- 主体内容 -->
     <section class="py-12 md:py-20 bg-gray-100">
-        <div class="container mx-auto px-6 max-w-4xl">
+        <div class="container mx-auto px-6 max-w-6xl">
             <!-- 面包屑导航 -->
             <div class="text-sm text-slate-500 mb-6">
                 <a href="services_zh.html" class="hover:text-blue-500">服务</a> &gt; 
-                <a href="translation-services_zh.html" class="hover:text-blue-500">文件翻译</a> &gt; 翻译方向选择
+                <a href="translation-services_zh.html" class="hover:text-blue-500">文件翻译</a> &gt; 
+                翻译方向选择
             </div>
 
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-3 border-b pb-3">
-                请选择您的翻译方向
+                请选择您的翻译需求方向
             </h1>
-            <p class="text-xl text-blue-600 mb-12 font-medium">
-                我们提供多种语言对的专业认证翻译服务。
+            <p class="text-xl text-blue-600 mb-10 font-medium">
+                所有翻译均由专业人士进行，确保专业性和准确性。
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 1. 中文至日文翻译 -->
-                <a href="cn-to-ja-rate_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg service-card border-l-4 border-red-500 hover:bg-gray-50">
-                        <h3 class="text-2xl font-semibold mb-2 text-red-600">中文 → 日文翻译</h3>
-                        <p class="text-slate-600">专业文件、文书、证明的日文翻译服务。</p>
-                    </div>
-                </a>
+            <!-- 翻译方向卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 
-                <!-- 2. 日文至中文翻译 -->
-                <a href="ja-to-cn-rate_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg service-card border-l-4 border-red-500 hover:bg-gray-50">
-                        <h3 class="text-2xl font-semibold mb-2 text-red-600">日文 → 中文翻译</h3>
-                        <p class="text-slate-600">日本官方文件、合同、资料的中文翻译服务。</p>
+                <!-- 卡片 1: 中文至日文 -->
+                <a href="cn-to-ja-rate_zh.html" class="card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">中文 → 日文翻译</h3>
+                        <p class="text-sm text-slate-600">处理各类证明文件、商务文书及专业报告的翻译。</p>
                     </div>
                 </a>
 
-                <!-- 3. 中文至英文翻译 -->
-                <a href="cn-to-en-rate_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg service-card border-l-4 border-red-500 hover:bg-gray-50">
-                        <h3 class="text-2xl font-semibold mb-2 text-red-600">中文 → 英文翻译</h3>
-                        <p class="text-slate-600">留学、移民、商务等文件的英文认证翻译。</p>
+                <!-- 卡片 2: 日文至中文 -->
+                <a href="ja-to-cn-rate_zh.html" class="card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">日文 → 中文翻译</h3>
+                        <p class="text-sm text-slate-600">专注于日本户籍、房产、税务等官方文件的精确中译。</p>
                     </div>
                 </a>
 
-                <!-- 4. 英文至中文翻译 (已有页面) -->
-                <a href="translation-rate_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg service-card border-l-4 border-red-500 hover:bg-gray-50">
-                        <h3 class="text-2xl font-semibold mb-2 text-red-600">英文 → 中文翻译</h3>
-                        <p class="text-slate-600">各类英文文件的中文翻译及公证服务。</p>
+                <!-- 卡片 3: 中文至英文 -->
+                <a href="cn-to-en-rate_zh.html" class="card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-600">
+                        <h3 class="text-xl font-semibold mb-2 text-yellow-600">中文 → 英文翻译</h3>
+                        <p class="text-sm text-slate-600">提供留学、签证、国际商务合同等文件的高质量英译。</p>
+                    </div>
+                </a>
+
+                <!-- 卡片 4: 英文至中文 -->
+                <a href="translation-rate_zh.html" class="card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">英文 → 中文翻译</h3>
+                        <p class="text-sm text-slate-600">专业处理各类英文证明书、学术论文和商业文件的中译需求。</p>
                     </div>
                 </a>
             </div>
 
-            <div class="mt-12 text-center">
-                <a href="contact_zh.html" class="inline-block bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300">
-                    特殊翻译需求请咨询
+            <!-- 新增：简易发包流程 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+                <h2 class="text-3xl font-bold color-primary-text mb-6 border-b pb-2">
+                    📄 翻译服务简易发包流程
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full step-table border-collapse">
+                        <tbody>
+                            <tr>
+                                <th class="whitespace-nowrap"><span class="step-number">STEP 1</span> 咨询与报价</th>
+                                <td>
+                                    <p class="font-semibold text-slate-800">发送文件，获取免费报价</p>
+                                    <p class="text-sm text-slate-600">通过“联系我们”页面或邮件发送您需要翻译的文件（Word, PDF, 扫描件等）。我们会立即评估难度和字数，并在 24 小时内提供精确报价和预估交货期。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="whitespace-nowrap"><span class="step-number">STEP 2</span> 确认与支付</th>
+                                <td>
+                                    <p class="font-semibold text-slate-800">确认订单后，进行预付款支付</p>
+                                    <p class="text-sm text-slate-600">在您接受报价后，请通过我们指定的支付方式（如银行转账、信用卡等）支付订单款项。确认支付后，翻译工作立即开始。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="whitespace-nowrap"><span class="step-number">STEP 3</span> 翻译与校对</th>
+                                <td>
+                                    <p class="font-semibold text-slate-800">专业译者执行，多重校对保障质量</p>
+                                    <p class="text-sm text-slate-600">由具备相关领域资质的译者进行翻译。完成初稿后，将进行两次严格的校对和质量检查，确保专业术语和格式准确无误。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="whitespace-nowrap"><span class="step-number">STEP 4</span> 最终交付</th>
+                                <td>
+                                    <p class="font-semibold text-slate-800">按时交付最终翻译件</p>
+                                    <p class="text-sm text-slate-600">在约定时间内，我们将通过电子邮件或邮寄（按客户要求）交付最终的翻译文件，通常包含**翻译证明书**（Certifiicate of Translation）。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!-- CTA Section -->
+            <div class="mt-8 text-center p-8 rounded-lg bg-blue-500 text-white shadow-xl">
+                <h3 class="text-2xl font-bold mb-4">准备好开始您的翻译项目了吗？</h3>
+                <p class="mb-6">点击下方按钮，发送您的文件，获取您的专属优惠报价！</p>
+                <a href="contact_zh.html" class="inline-block bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                    免费获取报价
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- JavaScript for Language Switcher (保持不变) -->
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
     <script>
-        // ... (省略 JavaScript 代码，保持原有逻辑) ...
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
         const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
 
+        // Toggle mobile menu
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
+        
+        // Language switching logic
         function handleLanguageChange(event) {
             const selectedLanguage = event.target.value;
             const currentPath = window.location.pathname;
             let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
             let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
             if (baseFile === currentFile || baseFile === "") {
                 baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
             }
             
+            // Construct the new URL
             let newFile = '';
             if (selectedLanguage === 'ja') {
                 newFile = (baseFile === 'index' || baseFile === 'index_zh') ? 'index.html' : baseFile + '_ja.html';
