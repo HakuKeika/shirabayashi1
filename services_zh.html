@@ -21,12 +21,18 @@
 
         .service-card {
             border-left-width: 4px;
+            transition: all 0.3s ease; /* 添加过渡效果 */
         }
 
         /* 确保所有服务卡片可点击 */
         .service-card-link {
             display: block;
             text-decoration: none;
+        }
+         /* 卡片悬停效果 */
+        .service-card-link:hover .service-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
         }
     </style>
 </head>
@@ -92,28 +98,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1.1: 日本深度文化体验 (链接到 cultural-experiences_zh.html) -->
                 <a href="cultural-experiences_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-red-500">
                         <h3 class="text-xl font-semibold mb-2 text-red-600">日本深度文化体验</h3>
                         <p class="text-sm text-slate-600">组织茶道、花道、和服、日式料理制作等传统文化活动，提供深入的文化理解与实践机会。</p>
                     </div>
                 </a>
                 <!-- Service 1.2: 主题文化探求 (链接到 cultural-experiences_zh.html) -->
                 <a href="cultural-experiences_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-red-500">
                         <h3 class="text-xl font-semibold mb-2 text-red-600">主题文化探求</h3>
                         <p class="text-sm text-slate-600">针对Cosplay、动漫、漫画等流行文化，策划并组织朝圣之旅、交流会及相关活动。</p>
                     </div>
                 </a>
-                <!-- Service 1.3: 新西兰留学与交流 (链接到 new-zealand-exchange_zh.html - 占位符) -->
+                <!-- Service 1.3: 新西兰留学与交流 (链接到 new-zealand-study_zh.html) -->
                 <a href="new-zealand-study_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-red-500">
                         <h3 class="text-xl font-semibold mb-2 text-red-600">新西兰留学与交流</h3>
                         <p class="text-sm text-slate-600">提供新西兰留学咨询、文化交流项目企划及生活支持。</p>
                     </div>
                 </a>
                 <!-- Service 1.4: 专业主题研修 (链接到 training-trips_zh.html) -->
                 <a href="training-trips_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-red-500">
                         <h3 class="text-xl font-semibold mb-2 text-red-600">专业主题研修</h3>
                         <p class="text-sm text-slate-600">组织高尔夫、庭园艺术、温泉疗养等高端、定制化的专业研修旅行。</p>
                     </div>
@@ -129,28 +135,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 2.1: 日语学习与语校中介 (链接到 language-services_zh.html) -->
                 <a href="language-services_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-blue-500">
                         <h3 class="text-xl font-semibold mb-2 text-blue-600">日语学习与语校中介</h3>
                         <p class="text-sm text-slate-600">提供基础到商务日语课程，并协助办理日本语言学校的入学手续。</p>
                     </div>
                 </a>
-                <!-- Service 2.2: 专业文件翻译 (链接到 language-services_zh.html) -->
-                <a href="language-services_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                <!-- Service 2.2: 专业文件翻译 (链接到 translation-options_zh.html) -->
+                <a href="translation-options_zh.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-blue-500">
                         <h3 class="text-xl font-semibold mb-2 text-blue-600">专业文件翻译</h3>
                         <p class="text-sm text-slate-600">提供法律文件、商务合同、技术手册等中日文互译服务，确保专业性与准确性。</p>
                     </div>
                 </a>
                 <!-- Service 2.3: 日本邮件/包裹转发 (链接到 mail-forwarding_zh.html) -->
                 <a href="mail-forwarding_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-blue-500">
                         <h3 class="text-xl font-semibold mb-2 text-blue-600">日本邮件/包裹转发</h3>
                         <p class="text-sm text-slate-600">为居住海外的客户提供专业的日本地址代收、邮件管理和包裹安全转发服务。</p>
                     </div>
                 </a>
                 <!-- Service 2.4: 商务会议组织 (链接到 contact_zh.html - 咨询) -->
                 <a href="contact_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-blue-500">
                         <h3 class="text-xl font-semibold mb-2 text-blue-600">商务会议组织</h3>
                         <p class="text-sm text-slate-600">协助组织海外投资洽谈、经营战略会议，提供场地、翻译和议程支持。</p>
                     </div>
@@ -166,28 +172,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 3.1: 不动产买卖与租赁 (链接到 real-estate-maintenance_zh.html) -->
                 <a href="real-estate-maintenance_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-yellow-500">
                         <h3 class="text-xl font-semibold mb-2 text-yellow-600">不动产买卖与租赁</h3>
                         <p class="text-sm text-slate-600">日本住宅及商业不动产的购买、出售、租赁中介，提供专业法律和金融咨询。</p>
                     </div>
                 </a>
                 <!-- Service 3.2: 住宿设施经营 (链接到 contact_zh.html - 咨询) -->
                 <a href="contact_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-yellow-500">
                         <h3 class="text-xl font-semibold mb-2 text-yellow-600">住宿设施经营</h3>
                         <p class="text-sm text-slate-600">酒店、民宿等住宿设施的运营管理、客户服务与市场推广。</p>
                     </div>
                 </a>
                 <!-- Service 3.3: 设施维护与代行 (链接到 real-estate-maintenance_zh.html) -->
                 <a href="real-estate-maintenance_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-yellow-500">
                         <h3 class="text-xl font-semibold mb-2 text-yellow-600">设施维护与代行</h3>
                         <p class="text-sm text-slate-600">包括房屋维护、庭院整理、杂草处理等专业服务代行，确保房产保值增值。</p>
                     </div>
                 </a>
                 <!-- Service 3.4: 国际艺术交流 (链接到 contact_zh.html - 咨询) -->
                 <a href="contact_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-yellow-500">
                         <h3 class="text-xl font-semibold mb-2 text-yellow-600">国际艺术交流</h3>
                         <p class="text-sm text-slate-600">策划、立案并执行跨国艺术展览、文化活动与艺术家交流项目。</p>
                     </div>
@@ -203,28 +209,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 4.1: 国际商品进出口 (链接到 contact_zh.html - 咨询) -->
                 <a href="contact_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-green-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-green-500">
                         <h3 class="text-xl font-semibold mb-2 text-green-600">国际商品进出口</h3>
                         <p class="text-sm text-slate-600">专业从事环境用品、家电、医疗品、食品等商品的日本进出口贸易与市场销售。</p>
                     </div>
                 </a>
                 <!-- Service 4.2: 商业配套服务 (链接到 contact_zh.html - 咨询) -->
                 <a href="contact_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-green-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-green-500">
                         <h3 class="text-xl font-semibold mb-2 text-green-600">商业配套服务</h3>
                         <p class="text-sm text-slate-600">提供运输、金融中介、中古品贩卖许可及相关商业配套支持。</p>
                     </div>
                 </a>
                 <!-- Service 4.3: 介护与劳务派遣 (链接到 contact_zh.html - 咨询) -->
                 <a href="contact_zh.html" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-green-500">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-green-500">
                         <h3 class="text-xl font-semibold mb-2 text-green-600">介护与劳务派遣</h3>
                         <p class="text-sm text-slate-600">提供专业的介护（护理）服务和劳务派遣，解决日本企业的人才需求。</p>
                     </div>
                 </a>
-                <!-- Service 4.4: 生活与健康事业 (链接到 contact_zh.html - 咨询) -->
-                <a href="www.shenghuojiankang.com" class="service-card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-green-500">
+                <!-- Service 4.4: 生活与健康事业 (链接到 www.shenghuojiankang.com) -->
+                <a href="https://www.shenghuojiankang.com" target="_blank" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 service-card border-green-500">
                         <h3 class="text-xl font-semibold mb-2 text-green-600">生活与健康事业</h3>
                         <p class="text-sm text-slate-600">涵盖美容、整体院经营，以及木材加工和资源回收等多元化生活与环保事业。</p>
                     </div>
