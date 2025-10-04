@@ -6,181 +6,227 @@
     <title>翻译方向选择 | 白林株式会社</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 样式 - 风格 1 -->
+    <!-- 设置字体和配色风格 -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
         }
-        .color-primary { color: #3b82f6; } 
+
+        /* 强调色定义 */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
         .color-primary-text { color: #3b82f6; }
-        
-        .card-link {
-            transition: transform 0.2s, box-shadow 0.2s;
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .service-card {
+            border-left-width: 4px;
+        }
+
+        /* 确保所有服务卡片可点击 */
+        .service-card-link {
             display: block;
             text-decoration: none;
         }
-        .card-link:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
         
-        /* 步骤表格样式 */
-        .step-table th, .step-table td {
-            padding: 12px 16px;
-            text-align: left;
-            border: 1px solid #e2e8f0;
-            vertical-align: middle;
-        }
-        .step-table th {
-            width: 150px;
-            background-color: #e0f2f1; /* 浅青色背景 */
-            color: #0d9488; /* 深青色文字 */
-            font-weight: 700;
-        }
-        .step-table td {
-            background-color: white;
-            color: #475569;
-        }
-        .step-number {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #3b82f6;
-            margin-right: 1rem;
+        .form-section {
+            border-left: 5px solid #3b82f6; /* Blue-500 */
         }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
 
-    <!-- 导航栏 - 风格 1 -->
+    <!-- 导航栏 (与 index_zh.html 保持一致) -->
     <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="index_zh.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
                 <span class="text-slate-800">白林株式会社</span>
             </a>
-            <!-- 桌面版菜单 -->
             <div class="flex items-center space-x-6">
+                <!-- 桌面版菜单 -->
                 <div class="hidden md:flex space-x-4 text-sm font-medium">
-                    <a href="services_zh.html" class="text-slate-600 hover:text-blue-600 transition-colors">服务</a>
+                    <a href="services_zh.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">服务</a>
                     <a href="about_zh.html" class="text-slate-600 hover:text-blue-600 transition-colors">公司概要</a>
                     <a href="contact_zh.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">联系我们</a>
                 </div>
-                <!-- 语言选择 -->
+                <!-- 桌面版语言选择 -->
                 <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="zh" selected>中文</option>
                     <option value="ja">日本語</option>
                     <option value="en">English</option>
                 </select>
+                <!-- 移动菜单按钮 -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
+        </div>
+        <!-- 移动菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- 移动版语言选择 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                <option value="zh" selected>中文</option>
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+            </select>
+            <a href="services_zh.html" class="block px-6 py-2 text-blue-600 bg-gray-50 font-semibold">服务</a>
+            <a href="about_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">公司概要</a>
+            <a href="contact_zh.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">联系我们</a>
         </div>
     </nav>
-    
-    <!-- 主体内容 -->
-    <section class="py-12 md:py-20 bg-gray-100">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <!-- 面包屑导航 -->
-            <div class="text-sm text-slate-500 mb-6">
-                <a href="services_zh.html" class="hover:text-blue-500">服务</a> &gt; 
-                <a href="translation-services_zh.html" class="hover:text-blue-500">文件翻译</a> &gt; 
-                翻译方向选择
+
+    <!-- 页面标题 (Page Header) -->
+    <header class="bg-white shadow-md py-10">
+        <div class="container mx-auto px-6">
+            <!-- 面包屑导航 (Breadcrumb) -->
+            <div class="text-sm text-slate-500 mb-2">
+                <a href="services_zh.html" class="hover:text-blue-600">服务</a> &gt; 
+                <a href="language-services_zh.html" class="hover:text-blue-600">语言与文书支持</a> &gt; 翻译方向选择
             </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold color-primary-text">翻译方向选择与报价</h1>
+            <p class="mt-2 text-lg text-slate-600">请选择您需要的翻译方向，进入文件报价详情页。</p>
+        </div>
+    </header>
 
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-3 border-b pb-3">
-                请选择您的翻译需求方向
-            </h1>
-            <p class="text-xl text-blue-600 mb-10 font-medium">
-                所有翻译均由专业人士进行，确保专业性和准确性。
-            </p>
-
-            <!-- 翻译方向卡片 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    <!-- 翻译方向选择卡片 -->
+    <main class="container mx-auto px-6 py-12">
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-slate-800 border-b pb-2">01. 选择翻译方向</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- 卡片 1: 中文至日文 -->
-                <a href="cn-to-ja-rate_zh.html" class="card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
-                        <h3 class="text-xl font-semibold mb-2 text-red-600">中文 → 日文翻译</h3>
-                        <p class="text-sm text-slate-600">处理各类证明文件、商务文书及专业报告的翻译。</p>
+                <!-- 卡片 1: 中文 -> 日文 -->
+                <a href="cn-to-ja-rate_zh.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-l-4 border-red-500 text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">中文 → 日文</h3>
+                        <p class="text-sm text-slate-600">适用于申请日本签证、留学、文书提交等用途。</p>
                     </div>
                 </a>
 
-                <!-- 卡片 2: 日文至中文 -->
-                <a href="ja-to-cn-rate_zh.html" class="card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
-                        <h3 class="text-xl font-semibold mb-2 text-blue-600">日文 → 中文翻译</h3>
-                        <p class="text-sm text-slate-600">专注于日本户籍、房产、税务等官方文件的精确中译。</p>
+                <!-- 卡片 2: 日文 -> 中文 -->
+                <a href="ja-to-cn-rate_zh.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-l-4 border-red-500 text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">日文 → 中文</h3>
+                        <p class="text-sm text-slate-600">适用于阅读法律文件、户籍资料、房产合同等。</p>
                     </div>
                 </a>
 
-                <!-- 卡片 3: 中文至英文 -->
-                <a href="cn-to-en-rate_zh.html" class="card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-600">
-                        <h3 class="text-xl font-semibold mb-2 text-yellow-600">中文 → 英文翻译</h3>
-                        <p class="text-sm text-slate-600">提供留学、签证、国际商务合同等文件的高质量英译。</p>
+                <!-- 卡片 3: 中文 -> 英文 -->
+                <a href="cn-to-en-rate_zh.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-l-4 border-red-500 text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">中文 → 英文</h3>
+                        <p class="text-sm text-slate-600">适用于海外学校申请、国际商务沟通、移民申请等。</p>
                     </div>
                 </a>
 
-                <!-- 卡片 4: 英文至中文 -->
-                <a href="translation-rate_zh.html" class="card-link">
-                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
-                        <h3 class="text-xl font-semibold mb-2 text-green-600">英文 → 中文翻译</h3>
-                        <p class="text-sm text-slate-600">专业处理各类英文证明书、学术论文和商业文件的中译需求。</p>
+                <!-- 卡片 4: 英文 -> 中文 -->
+                <a href="translation-rate_zh.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-l-4 border-red-500 text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">英文 → 中文</h3>
+                        <p class="text-sm text-slate-600">适用于阅读英文合同、学术论文、国际报告等。</p>
                     </div>
                 </a>
             </div>
+        </section>
 
-            <!-- 新增：简易发包流程 -->
-            <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
-                <h2 class="text-3xl font-bold color-primary-text mb-6 border-b pb-2">
-                    📄 翻译服务简易发包流程
-                </h2>
-                <div class="overflow-x-auto">
-                    <table class="w-full step-table border-collapse">
-                        <tbody>
-                            <tr>
-                                <th class="whitespace-nowrap"><span class="step-number">STEP 1</span> 咨询与报价</th>
-                                <td>
-                                    <p class="font-semibold text-slate-800">发送文件，获取免费报价</p>
-                                    <p class="text-sm text-slate-600">通过“联系我们”页面或邮件发送您需要翻译的文件（Word, PDF, 扫描件等）。我们会立即评估难度和字数，并在 24 小时内提供精确报价和预估交货期。</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="whitespace-nowrap"><span class="step-number">STEP 2</span> 确认与支付</th>
-                                <td>
-                                    <p class="font-semibold text-slate-800">确认订单后，进行预付款支付</p>
-                                    <p class="text-sm text-slate-600">在您接受报价后，请通过我们指定的支付方式（如银行转账、信用卡等）支付订单款项。确认支付后，翻译工作立即开始。</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="whitespace-nowrap"><span class="step-number">STEP 3</span> 翻译与校对</th>
-                                <td>
-                                    <p class="font-semibold text-slate-800">专业译者执行，多重校对保障质量</p>
-                                    <p class="text-sm text-slate-600">由具备相关领域资质的译者进行翻译。完成初稿后，将进行两次严格的校对和质量检查，确保专业术语和格式准确无误。</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="whitespace-nowrap"><span class="step-number">STEP 4</span> 最终交付</th>
-                                <td>
-                                    <p class="font-semibold text-slate-800">按时交付最终翻译件</p>
-                                    <p class="text-sm text-slate-600">在约定时间内，我们将通过电子邮件或邮寄（按客户要求）交付最终的翻译文件，通常包含**翻译证明书**（Certifiicate of Translation）。</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <!-- 翻译服务在线申请书 - 模仿专业网站风格 -->
+        <section class="mt-16 bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+            <h2 class="text-3xl font-bold color-primary-text mb-8 text-center">翻译服务在线申请书</h2>
+            <div class="text-center mb-6">
+                <p class="text-red-500 font-semibold text-lg">⚠️ 注意：请在填写前先点击上方卡片，查看具体报价。</p>
+            </div>
+
+            <!-- Formspree 集成表单 -->
+            <!-- IMPORTANT: Replace YOUR_FORMSPREE_ENDPOINT with your actual Formspree endpoint -->
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="space-y-6">
+                
+                <!-- 客户信息 -->
+                <div class="form-section p-4 bg-gray-50 rounded-md">
+                    <h3 class="font-bold text-xl text-blue-600 mb-4">订单者信息 (注文者)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1">姓名 *</label>
+                            <input type="text" id="name" name="姓名" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">电子邮箱 *</label>
+                            <input type="email" id="email" name="电子邮箱" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-xs text-slate-500 mt-1">请勿使用Hotmail或运营商邮箱。</p>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">电话号码 *</label>
+                            <input type="tel" id="phone" name="电话号码" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="zip-code" class="block text-sm font-medium text-slate-700 mb-1">邮政编码</label>
+                            <input type="text" id="zip-code" name="邮政编码" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+                <!-- 订单内容 -->
+                <div class="form-section p-4 bg-gray-50 rounded-md">
+                    <h3 class="font-bold text-xl text-blue-600 mb-4">订单内容 (注文内容)</h3>
+                    
+                    <!-- 翻译方向 -->
+                    <div class="mb-4">
+                        <label for="translation-direction" class="block text-sm font-medium text-slate-700 mb-1">所需翻译方向 *</label>
+                        <select id="translation-direction" name="翻译方向" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">-- 请选择 --</option>
+                            <option value="CN_to_JA">中文 → 日文</option>
+                            <option value="JA_to_CN">日文 → 中文</option>
+                            <option value="CN_to_EN">中文 → 英文</option>
+                            <option value="EN_to_CN">英文 → 中文</option>
+                            <option value="Other">其他（请在备注中说明）</option>
+                        </select>
+                    </div>
 
-            <!-- CTA Section -->
-            <div class="mt-8 text-center p-8 rounded-lg bg-blue-500 text-white shadow-xl">
-                <h3 class="text-2xl font-bold mb-4">准备好开始您的翻译项目了吗？</h3>
-                <p class="mb-6">点击下方按钮，发送您的文件，获取您的专属优惠报价！</p>
-                <a href="contact_zh.html" class="inline-block bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
-                    免费获取报价
-                </a>
+                    <!-- 交付日期 -->
+                    <div class="mb-4">
+                        <label for="desired-deadline" class="block text-sm font-medium text-slate-700 mb-1">希望交付期限</label>
+                        <select id="desired-deadline" name="希望交付期限" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="normal">通常納期</option>
+                            <option value="express">特急納期 (需加急费)</option>
+                            <option value="super-express">超级特急納期 (需加急费)</option>
+                        </select>
+                    </div>
+
+                    <!-- 文件附件 -->
+                    <div class="mb-4">
+                        <label for="file-upload" class="block text-sm font-medium text-slate-700 mb-1">上传翻译文件 (附件 1)</label>
+                        <input type="file" id="file-upload" name="翻译文件_1" class="w-full text-slate-700 border border-gray-300 rounded-md py-2 px-3 bg-white focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <!-- 可以在 Formspree 中创建更多附件字段 -->
+
+                    <!-- 备注 -->
+                    <div class="mb-4">
+                        <label for="notes" class="block text-sm font-medium text-slate-700 mb-1">备注/其他要求</label>
+                        <textarea id="notes" name="备注" rows="3" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                </div>
+
+                <!-- 提交按钮 -->
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-10 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
+                        提交申请 (立即发送)
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- フッター (Footer - 与 index_zh.html 保持一致) -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-3 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">隐私政策</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">使用条款</a>
+                <a href="about_zh.html" class="text-slate-400 hover:text-white transition-colors">公司概要</a>
             </div>
         </div>
-    </section>
+    </footer>
 
     <!-- JavaScript for Mobile Menu and Language Switcher -->
     <script>
@@ -200,6 +246,7 @@
             const currentPath = window.location.pathname;
             let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
+            // Determine the base filename (e.g., translation-options_zh.html -> translation-options)
             let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
             if (baseFile === currentFile || baseFile === "") {
                 baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
