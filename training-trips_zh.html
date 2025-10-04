@@ -18,14 +18,17 @@
         .color-primary { background-color: #3b82f6; } /* Blue-500 */
         .color-primary-text { color: #3b82f6; }
         .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .service-card {
+            border-left-width: 4px;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
 
-    <!-- 导航栏 -->
+    <!-- 导航栏 (与 index_zh.html 保持一致) -->
     <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <!-- Logo - 统一为黑色 -->
             <a href="index_zh.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
                 <span class="text-slate-800">白林株式会社</span>
             </a>
@@ -64,84 +67,72 @@
         </div>
     </nav>
 
-    <!-- 页面标题 -->
+    <!-- 页面头部 -->
     <header class="bg-white shadow-md py-12">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 text-center">
             <!-- 面包屑导航 -->
             <div class="text-sm text-slate-500 mb-2">
-                <a href="index_zh.html" class="hover:text-blue-500">首页</a> &gt; 
-                <a href="services_zh.html" class="hover:text-blue-500">服务</a> &gt; 主题研修旅行
+                <a href="services_zh.html" class="hover:text-blue-600">服务</a> &gt; 主题研修旅行
             </div>
-            <h1 class="text-4xl font-extrabold color-primary-text">日本主题研修旅行</h1>
-            <p class="mt-3 text-lg text-slate-600">提供深度文化探索和专业技能提升的主题定制旅行。</p>
+            <h1 class="text-4xl font-extrabold color-primary-text">专业主题研修旅行</h1>
+            <p class="mt-3 text-lg text-slate-600">提供深度文化鉴赏和专业技能提升的定制化旅行方案。</p>
         </div>
     </header>
 
-    <!-- 服务内容区 -->
-    <section class="py-16 md:py-24 bg-gray-100">
-        <div class="container mx-auto px-6 max-w-6xl">
+    <!-- 内容区域 -->
+    <main class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-            <!-- 核心优势 -->
-            <div class="mb-16 text-center">
-                <h2 class="text-3xl font-extrabold text-slate-800 mb-8">精选研修主题</h2>
-                <p class="text-lg text-slate-600">我们将兴趣与专业知识相结合，提供独一无二的深度体验。</p>
-            </div>
-
-            <!-- 主题卡片列表 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- 卡片 1: 日本庭园和庭园文化鉴赏 -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
-                    <img src="https://placehold.co/600x350/3b82f6/ffffff?text=Japanese+Garden" alt="日本庭园" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-slate-800 mb-3">日本庭园和庭园文化鉴赏</h3>
-                        <p class="text-slate-600 mb-4">深入了解日本庭园的历史、设计哲学和精神内涵。由专业人士带领，在京都等地进行实地鉴赏。</p>
-                        <a href="garden-appreciation_zh.html" class="inline-flex items-center text-red-500 font-semibold hover:text-red-600 transition-colors">
-                            了解详细
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 卡片 2: 日本高尔夫初级学习班 -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
-                    <img src="https://placehold.co/600x350/ef4444/ffffff?text=Golf+Training" alt="高尔夫学习班" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-slate-800 mb-3">日本高尔夫初级学习班</h3>
-                        <p class="text-slate-600 mb-4">为期 10 天的专业学习和旅行体验。由持证日本教练执教，掌握高尔夫初级技能、规则与礼仪。</p>
-                        <a href="golf-beginner-class_zh.html" class="inline-flex items-center text-red-500 font-semibold hover:text-red-600 transition-colors">
-                            了解详细
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 卡片 3: 新西兰留学、文化交流和体验的企划和执行 -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
-                    <img src="https://placehold.co/600x350/3b82f6/ffffff?text=New+Zealand+Exchange" alt="新西兰文化交流" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-slate-800 mb-3">新西兰留学、文化交流和体验的企划和执行</h3>
-                        <p class="text-slate-600 mb-4">提供留学咨询、文化沉浸体验和定制旅行方案，全面支持您在新西兰的学习和生活。</p>
-                        <a href="new-zealand-exchange_zh.html" class="inline-flex items-center text-red-500 font-semibold hover:text-red-600 transition-colors">
-                            了解详细
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
-
-            <!-- CTA -->
-            <div class="text-center mt-16">
-                <a href="contact_zh.html" class="bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-xl hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
-                    立即定制您的研修之旅
+            <!-- 研修卡片 1: 日本庭园和庭园文化鉴赏 -->
+            <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-yellow-500 service-card hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-2xl font-bold mb-3 text-yellow-600">日本庭园和庭园文化鉴赏</h2>
+                <p class="text-slate-600 mb-4">
+                    深入日本名园，由专家带领鉴赏日本独特的庭园艺术、哲学理念和历史文化。是理解和体验日本美学精髓的绝佳机会。
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1 mb-6">
+                    <li>主题：枯山水、回游式庭园的构成与精神。</li>
+                    <li>包含：专业解说、深度访谈、和式茶点体验。</li>
+                </ul>
+                <a href="garden-culture_zh.html" class="inline-block color-secondary text-white font-semibold py-2 px-6 rounded-full hover:bg-red-600 transition-colors duration-300">
+                    了解详细
                 </a>
             </div>
 
+            <!-- 研修卡片 2: 日本高尔夫初级学习班 -->
+            <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-yellow-500 service-card hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-2xl font-bold mb-3 text-yellow-600">日本高尔夫初级学习班</h2>
+                <p class="text-slate-600 mb-4">
+                    适合高尔夫初学者，由持证日本教练指导，进行系统化的初级技能、球场策略、规则及礼仪学习。
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1 mb-6">
+                    <li>时长：10 天（5 天教学 + 5 天旅行）。</li>
+                    <li>环境：日本专用高尔夫球练习场。</li>
+                </ul>
+                <a href="golf-beginner-class_zh.html" class="inline-block color-secondary text-white font-semibold py-2 px-6 rounded-full hover:bg-red-600 transition-colors duration-300">
+                    了解详细
+                </a>
+            </div>
+
+            <!-- 研修卡片 3: 新西兰留学、文化交流和体验的企划和执行（已转移） -->
+            <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-yellow-500 service-card hover:shadow-2xl transition-shadow duration-300 hidden">
+                <!-- 此卡片已根据您的要求转移到 services_zh.html 的语言服务类别下 -->
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- 底部行动呼吁 (CTA) -->
+    <section class="bg-blue-600 py-16 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">开始您的定制研修之旅</h2>
+            <p class="text-lg mb-6">我们为您提供专业的旅行方案设计和全程支持。</p>
+            <a href="contact_zh.html" class="inline-block bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                立即联系我们
+            </a>
         </div>
     </section>
 
-    <!-- フッター (Footer) -->
+    <!-- 脚注 -->
     <footer class="bg-slate-900 text-white py-10">
         <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
@@ -170,14 +161,11 @@
             const selectedLanguage = event.target.value;
             const currentPath = window.location.pathname;
             let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-
-            // Determine the base filename (e.g., training-trips)
             let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
             if (baseFile === currentFile || baseFile === "") {
                 baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
             }
-            
-            // Construct the new URL
+
             let newFile = '';
             if (selectedLanguage === 'ja') {
                 newFile = (baseFile === 'index' || baseFile === 'index_zh') ? 'index.html' : baseFile + '_ja.html';
