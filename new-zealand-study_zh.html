@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新西兰留学详情 | 白林株式会社</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 设置字体和配色风格 -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* 强调色定义 */
+        .color-primary { background-color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .highlight {
+            background-color: #e0f2f1; /* Teal-100 */
+            border-left: 4px solid #14b8a6; /* Teal-600 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index_zh.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
+                <span class="text-slate-800">白林株式会社</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- 桌面版菜单 -->
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_zh.html" class="text-slate-600 hover:text-blue-600 transition-colors">服务</a>
+                    <a href="about_zh.html" class="text-slate-600 hover:text-blue-600 transition-colors">公司概要</a>
+                    <a href="contact_zh.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">联系我们</a>
+                </div>
+                <!-- 桌面版语言选择 -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                    <option value="zh" selected>中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="en">English</option>
+                </select>
+                <!-- 移动菜单按钮 -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- 移动菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- 移动版语言选择 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                <option value="zh" selected>中文</option>
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+            </select>
+            <a href="services_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">服务</a>
+            <a href="about_zh.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">公司概要</a>
+            <a href="contact_zh.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">联系我们</a>
+        </div>
+    </nav>
+    
+    <!-- 页面头部 -->
+    <header class="bg-white shadow-md py-12">
+        <div class="container mx-auto px-6 text-center">
+            <!-- 面包屑导航 (Breadcrumb) -->
+            <div class="text-sm text-slate-500 mb-2">
+                <a href="services_zh.html" class="hover:text-blue-600">服务</a> &gt; 新西兰留学与交流
+            </div>
+            <h1 class="text-4xl font-extrabold color-primary-text">新西兰留学、文化交流和体验的企划和执行</h1>
+            <p class="mt-3 text-lg text-slate-600">提供新西兰留学申请、文化交流项目设计和全程生活支持。</p>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <main class="container mx-auto px-6 py-16">
+        <div class="max-w-4xl mx-auto">
+            
+            <img src="https://placehold.co/1000x500/3b82f6/ffffff?text=New+Zealand+Study+Abroad" alt="新西兰留学图片" class="w-full h-auto rounded-xl shadow-2xl mb-12">
+
+            <!-- 核心服务 -->
+            <div class="mb-16 highlight p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-slate-800 mb-4 border-b pb-2">🌏 我们的服务核心</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700">
+                    <p class="flex flex-col items-center text-center p-3 border rounded-lg hover:bg-white transition-colors">
+                        <span class="text-3xl text-blue-600 font-extrabold">1</span>
+                        <span class="font-bold mt-2">留学申请一站式服务</span>
+                        <span class="text-sm">从择校、文书到签证，全程专业指导。</span>
+                    </p>
+                    <p class="flex flex-col items-center text-center p-3 border rounded-lg hover:bg-white transition-colors">
+                        <span class="text-3xl text-blue-600 font-extrabold">2</span>
+                        <span class="font-bold mt-2">定制文化交流项目</span>
+                        <span class="text-sm">深度体验毛利文化、自然探险等特色活动。</span>
+                    </p>
+                    <p class="flex flex-col items-center text-center p-3 border rounded-lg hover:bg-white transition-colors">
+                        <span class="text-3xl text-blue-600 font-extrabold">3</span>
+                        <span class="font-bold mt-2">全程生活与落地支持</span>
+                        <span class="text-sm">提供接机、住宿、当地适应等贴心服务。</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 详细服务内容 -->
+            <div class="mb-16 space-y-10">
+                
+                <div>
+                    <h3 class="text-2xl font-bold color-primary-text mb-4">学业规划与申请执行</h3>
+                    <ul class="list-disc list-inside text-slate-600 space-y-3 pl-4">
+                        <li>**院校推荐：** 根据学生的背景和职业目标，精准匹配新西兰的大学、理工学院和中小学。</li>
+                        <li>**申请文书指导：** 协助撰写个人陈述、简历，确保申请材料符合新西兰院校要求。</li>
+                        <li>**签证办理支持：** 提供最新的签证政策咨询，指导并审核签证申请材料。</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold color-primary-text mb-4">文化交流与体验项目</h3>
+                    <ul class="list-disc list-inside text-slate-600 space-y-3 pl-4">
+                        <li>**毛利文化深度体验：** 组织参访毛利部落，体验传统仪式、艺术和手工艺。</li>
+                        <li>**自然探险企划：** 规划户外探险活动，如徒步、观鲸、极限运动，体验新西兰独特的自然风光。</li>
+                        <li>**跨文化适应培训：** 提供行前培训，帮助学生快速适应新西兰的生活习惯和社交礼仪。</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold color-primary-text mb-4">生活与落地支持</h3>
+                    <ul class="list-disc list-inside text-slate-600 space-y-3 pl-4">
+                        <li>**住宿安排：** 协助安排寄宿家庭、学生公寓或租房事宜。</li>
+                        <li>**接机与交通指导：** 提供机场接送服务，并指导当地公共交通使用。</li>
+                        <li>**银行、医疗等生活指导：** 协助办理银行开户、健康保险，确保学生在新西兰的生活无忧。</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- 联系咨询 -->
+            <div class="mt-16 text-center bg-white p-8 rounded-xl shadow-2xl border-t-4 border-blue-500">
+                <h2 class="text-3xl font-bold color-primary-text mb-4">立即开启您的新西兰留学计划</h2>
+                <p class="text-lg text-slate-700 mb-6">我们的专业顾问将为您提供一对一咨询和定制方案。</p>
+                <a href="contact_zh.html" class="inline-block color-secondary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                    提交咨询表单
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 脚注 -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-3 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">隐私政策</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">使用条款</a>
+                <a href="about_zh.html" class="text-slate-400 hover:text-white transition-colors">公司概要</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // Toggle mobile menu
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Language switching logic
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+
+            let newFile = '';
+            if (selectedLanguage === 'ja') {
+                newFile = (baseFile === 'index' || baseFile === 'index_zh') ? 'index.html' : baseFile + '_ja.html';
+            } else if (selectedLanguage === 'en') {
+                newFile = baseFile + '_en.html';
+            } else if (selectedLanguage === 'zh') {
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>
