@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻訳オプションと料金プラン | 白林株式会社</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 设置字体和配色风格 -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* 强调色定义 */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+        .highlight-border {
+            border-top: 4px solid #ef4444; /* Red-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- ナビゲーションバー (导航栏) -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
+                <!-- 会社 ロゴ/名称 -->
+                <span class="text-slate-800">白林株式会社</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- デスクトップ版言語選択 -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                    <option value="ja" selected>日本語</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_ja.html" class="text-slate-600 hover:text-blue-600 transition-colors">サービス</a>
+                    <a href="about_ja.html" class="text-slate-600 hover:text-blue-600 transition-colors">会社概要</a>
+                    <a href="contact_ja.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">お問い合わせ</a>
+                </div>
+                <!-- モバイルメニューボタン -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- モバイル版言語選択 -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                    <option value="ja" selected>日本語</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+            </select>
+            <a href="services_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">サービス</a>
+            <a href="about_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">会社概要</a>
+            <a href="contact_ja.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">お問い合わせ</a>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="bg-white shadow-md py-12">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-extrabold color-primary-text text-center">翻訳オプションと料金プラン</h1>
+            <p class="mt-3 text-lg text-slate-600 text-center">お客様の目的とご予算に合わせた最適な翻訳ソリューションをご提案します。</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ (料金プラン) -->
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- パンくずリスト -->
+        <div class="text-sm text-slate-500 mb-10">
+            <a href="services_ja.html" class="hover:text-blue-600">サービス</a> &gt; 翻訳オプション
+        </div>
+
+        <section id="pricing-tiers" class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- プラン 1: ベーシック翻訳 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold mb-2 text-blue-600">ベーシック翻訳</h2>
+                        <p class="text-lg text-slate-500 mb-4">迅速な対応とコスト効率を重視</p>
+                        <p class="text-4xl font-extrabold text-slate-800 mb-6">¥5.0<span class="text-xl font-normal text-slate-500">/文字～</span></p>
+                    </div>
+                    <p class="text-slate-600 mb-6 text-sm">
+                        社内文書、非公開の資料、一般的なコミュニケーションなど、正確性よりも速度とコストを優先する場合に適しています。
+                    </p>
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            経験豊富な翻訳者
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            基本的な用語チェック
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            ネイティブによる校正なし
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- プラン 2: プロフェッショナル認証翻訳 (推奨) -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-2xl highlight-border transform scale-105">
+                    <div class="text-center">
+                        <span class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">RECOMMENDED</span>
+                        <h2 class="text-2xl font-bold mb-2 text-red-600">プロフェッショナル認証翻訳</h2>
+                        <p class="text-lg text-slate-500 mb-4">品質、正確性、自然な表現を保証</p>
+                        <p class="text-4xl font-extrabold text-slate-800 mb-6">¥8.0<span class="text-xl font-normal text-slate-500">/文字～</span></p>
+                    </div>
+                    <p class="text-slate-600 mb-6 text-sm">
+                        契約書、ウェブサイトコンテンツ、マーケティング資料など、外部に公開する重要文書に最適です。
+                    </p>
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex items-center font-semibold">
+                            <svg class="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            **専門分野のネイティブ翻訳者**
+                        </li>
+                        <li class="flex items-center font-semibold">
+                            <svg class="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            **専門家による徹底した校正**
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            品質保証体制（QAプロセス）
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- プラン 3: 専門分野・高度翻訳 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold mb-2 text-blue-600">専門分野・高度翻訳</h2>
+                        <p class="text-lg text-slate-500 mb-4">高精度と専門用語の完全一致が要求される文書向け</p>
+                        <p class="text-4xl font-extrabold text-slate-800 mb-6">個別見積り</p>
+                    </div>
+                    <p class="text-slate-600 mb-6 text-sm">
+                        医療、特許、金融レポート、技術マニュアルなど、専門知識が必須となる分野の文書に対応します。
+                    </p>
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            分野別資格保有翻訳者
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            翻訳メモリ・用語集の作成
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            専門知識を持つ編集者による最終レビュー
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 補足情報 -->
+        <section class="mt-16 bg-blue-50 p-8 rounded-xl shadow-md">
+            <h3 class="text-2xl font-bold text-blue-700 mb-4">補足情報</h3>
+            <ul class="list-disc list-inside text-slate-600 space-y-2 pl-4 text-sm">
+                <li>上記の料金は目安であり、難易度、納期、言語ペアによって変動します。</li>
+                <li>最低発注文字数は、プランにより異なります。詳細はお問い合わせください。</li>
+                <li>納期を急がれる場合は、エクスプレス料金が適用される場合がございます。</li>
+            </ul>
+        </section>
+        
+        <!-- 通用連絡フォームモジュール -->
+        <section id="contact-form-module" class="mt-16 bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+            <h2 class="text-2xl font-bold color-primary-text mb-6 text-center">個別見積りをご希望ですか？今すぐお問い合わせください</h2>
+            
+            <!-- Formspree Endpointを使用 -->
+            <form action="https://formspree.io/f/xgvnydqd" method="POST" class="space-y-4 max-w-lg mx-auto">
+                <!-- 隠しフィールド：フォーム送信元を識別 -->
+                <input type="hidden" name="form_source" value="Translation_Options_JA" />
+                <input type="hidden" name="form_name" value="Service_Details_JA" />
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- お名前 -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">お名前 *</label>
+                        <input type="text" id="name" name="Name" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <!-- メールアドレス -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">メールアドレス *</label>
+                        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 電話番号 -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">電話番号</label>
+                        <input type="tel" id="phone" name="Phone_Number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <!-- Wechat ID -->
+                    <div>
+                        <label for="wechat" class="block text-sm font-medium text-slate-700 mb-1">WeChat ID</label>
+                        <input type="text" id="wechat" name="WeChat_ID" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                
+                <!-- お問い合わせ内容 (ドロップダウン) -->
+                <div>
+                    <label for="inquiry-subject" class="block text-sm font-medium text-slate-700 mb-1">翻訳に関するお問い合わせ項目 *</label>
+                    <select id="inquiry-subject" name="Inquiry_Subject" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="" disabled selected>希望する翻訳プランを選択してください...</option>
+                        <option value="Basic_Translation">ベーシック翻訳の見積り</option>
+                        <option value="Professional_Translation">プロフェッショナル認証翻訳の見積り</option>
+                        <option value="Specialized_Translation">専門分野・高度翻訳の見積り</option>
+                        <option value="General_Inquiry">その他一般のお問い合わせ</option>
+                    </select>
+                </div>
+
+                <!-- 詳細メッセージ -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">詳細メッセージ/ご要望（翻訳対象の文書の種類など）</label>
+                    <textarea id="message" name="Specific_Message" rows="3" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                
+                <div class="text-center pt-4">
+                    <button type="submit" class="bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                        送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+        <!-- 通用連絡フォームモジュール 終了 -->
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
+            <div class="mt-3 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">プライバシーポリシー</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">利用規約</a>
+                <a href="about_ja.html" class="text-slate-400 hover:text-white transition-colors">会社概要</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // Toggle mobile menu
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Language switching logic
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+            // Determine the base filename
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+
+            // Construct the new URL
+            let newFile = '';
+            if (selectedLanguage === 'ja') {
+                newFile = (baseFile === 'index' || baseFile === 'index_en') ? 'index.html' : baseFile + '_ja.html';
+            } else if (selectedLanguage === 'en') {
+                newFile = baseFile + '_en.html';
+            } else if (selectedLanguage === 'zh') {
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>
