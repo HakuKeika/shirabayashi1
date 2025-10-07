@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Pilgrimage Tour | Shirabayashi Co., Ltd.</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Set Font and Color Scheme -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* Accent Color Definition */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .highlight {
+            background-color: #f0f9ff; /* Very Light Blue */
+            border-left: 4px solid #3b82f6; /* Blue-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index_en.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
+                <span class="text-slate-800">Shirabayashi Co., Ltd.</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- Desktop Language Switcher -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                    <option value="ja">日本語</option>
+                    <option value="en" selected>English</option>
+                    <option value="zh">中文</option>
+                </select>
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_en.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Services</a>
+                    <a href="about_en.html" class="text-slate-600 hover:text-blue-600 transition-colors">About Us</a>
+                    <a href="contact_en.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- Mobile Language Switcher -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                    <option value="ja">日本語</option>
+                    <option value="en" selected>English</option>
+                    <option value="zh">中文</option>
+            </select>
+            <a href="services_en.html" class="block px-6 py-2 text-blue-600 bg-gray-50 font-semibold">Services</a>
+            <a href="about_en.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">About Us</a>
+            <a href="contact_en.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <section class="py-12 md:py-20 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <!-- Breadcrumb -->
+            <div class="text-sm text-slate-500 mb-6">
+                <a href="services_en.html" class="hover:text-blue-600">Services</a> &gt; 
+                <a href="cultural-experiences_en.html" class="hover:text-blue-600">Cultural Experience</a> &gt; Manga Pilgrimage
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-3">
+                📚 Japan Manga Pilgrimage Tour (7 Days)
+            </h1>
+            <p class="text-xl text-blue-600 mb-10 font-medium">
+                Touring Anime and Manga Locations | Exploring Four Kansai Cities (Osaka, Kyoto, Nagoya, Nara)
+            </p>
+
+            <img src="https://placehold.co/1000x500/3b82f6/ffffff?text=Manga+Pilgrimage+Tour+in+Japan" alt="Manga Pilgrimage Tour Image" class="w-full h-auto rounded-xl shadow-2xl mb-12">
+
+            <!-- Core Features & Highlights -->
+            <div class="mb-16 bg-white p-8 rounded-xl shadow-lg highlight">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">✨ Tour Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-xl text-slate-800 mb-2">Location: Comprehensive Kansai Region</h3>
+                        <p class="text-slate-600">Visiting areas where history and subculture intersect, such as Osaka, Kyoto, Nagoya, and Nara.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-slate-800 mb-2">Secure Japanese Escort</h3>
+                        <p class="text-slate-600">**Japanese staff will accompany you throughout the entire tour**, assisting with interpretation, logistics, and local interaction.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-slate-800 mb-2">Dedicated Private Vehicle Transfer</h3>
+                        <p class="text-slate-600">**Dedicated private vehicle transfer is provided for the entire itinerary**, including airport pickup/drop-off, ensuring comfortable travel.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-slate-800 mb-2">Pilgrimage and Cultural Exchange (7 Days)</h3>
+                        <p class="text-slate-600">A 7-day itinerary visiting famous **manga and anime locations**, offering a deep dive into Japanese pop culture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost and Itinerary -->
+            <div class="mb-16 bg-white p-8 rounded-xl shadow-lg border-l-4 border-red-500">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">🗓️ Itinerary & Cost (7 Days / Per Person)</h2>
+                <p class="text-4xl font-extrabold text-red-600 mb-6">¥150,000 JPY / Person (Starting Price)</p>
+                <p class="text-sm text-slate-500 mb-6">※ Costs may vary based on accommodation, season, and exchange rates. Please inquire for details.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-xl text-slate-800 mb-2">Cost Includes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2">
+                            <li>**Minshuku (guesthouse) accommodation** for the entire trip (6 nights).</li>
+                            <li>**Three meals per day** during the stay.</li>
+                            <li>**Dedicated private vehicle transfer** for the entire itinerary (including airport).</li>
+                            <li>**Full-time Japanese staff escort** service fees.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-slate-800 mb-2">Cost Excludes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2">
+                            <li>**International round-trip airfare** and visa application fees.</li>
+                            <li>**All health and life insurance** for the duration of the trip.</li>
+                            <li>Expenses or losses due to illness or accidents.</li>
+                            <li>Personal shopping or admission fees for various facilities.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Lead -->
+            <div class="text-center mt-12">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Inquire About Details Now</h3>
+                <img src="qr-code-contact.jpg" alt="WeChat QR Code for Consultation" class="mx-auto w-40 h-40 rounded-lg shadow-md mb-6">
+                <a href="contact_en.html" class="inline-block bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                    Inquire Online
+                </a>
+            </div>
+        </section>
+
+        <!-- General Contact Form Module -->
+        <section id="contact-form-module" class="mt-16 bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+            <h2 class="text-2xl font-bold color-primary-text mb-6 text-center">Interested in this Tour? Contact Us Now</h2>
+            
+            <!-- Using Formspree Endpoint -->
+            <form action="https://formspree.io/f/xgvnydqd" method="POST" class="space-y-4 max-w-lg mx-auto">
+                <!-- Hidden Field: Identify Form Source -->
+                <input type="hidden" name="form_source" value="Manga_Tour_EN" />
+                <input type="hidden" name="form_name" value="Service_Details_EN" />
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name *</label>
+                        <input type="text" id="name" name="Name" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email *</label>
+                        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="Phone_Number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <!-- Wechat ID -->
+                    <div>
+                        <label for="wechat" class="block text-sm font-medium text-slate-700 mb-1">WeChat ID</label>
+                        <input type="text" id="wechat" name="WeChat_ID" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                
+                <!-- Inquiry Subject (Dropdown) -->
+                <div>
+                    <label for="inquiry-subject" class="block text-sm font-medium text-slate-700 mb-1">Inquiry Subject *</label>
+                    <select id="inquiry-subject" name="Inquiry_Subject" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="" disabled selected>Select the area of interest...</option>
+                        <option value="Tour_Details">Tour Details</option>
+                        <option value="Schedule_Itinerary">Schedule / Itinerary</option>
+                        <option value="Fee_Inquiry">Fee Inquiry</option>
+                        <option value="General_Inquiry">General Inquiry</option>
+                    </select>
+                </div>
+
+                <!-- Detailed Message -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Detailed Message/Requests</label>
+                    <textarea id="message" name="Specific_Message" rows="3" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                
+                <div class="text-center pt-4">
+                    <button type="submit" class="bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                        Submit Inquiry
+                    </button>
+                </div>
+            </form>
+        </section>
+        <!-- General Contact Form Module End -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 Shirabayashi Co., Ltd. All Rights Reserved.</p>
+            <div class="mt-3 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Use</a>
+                <a href="about_en.html" class="text-slate-400 hover:text-white transition-colors">About Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // Toggle mobile menu
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Language switching logic
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+            // Determine the base filename
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+            if (baseFile === 'index') {
+                baseFile = 'index_ja';
+            }
+
+            // Construct the new URL
+            let newFile = '';
+            if (selectedLanguage === 'ja') {
+                newFile = (baseFile === 'index_ja') ? 'index.html' : baseFile + '_ja.html';
+            } else if (selectedLanguage === 'en') {
+                newFile = baseFile + '_en.html';
+            } else if (selectedLanguage === 'zh') {
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>
