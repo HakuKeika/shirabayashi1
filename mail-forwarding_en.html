@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Mail Forwarding Service | Shirabayashi Corporation</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Set Font and Color Style -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* Define Accent Colors */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .service-card {
+            border-left-width: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .service-card-link {
+            display: block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index_en.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
+                <!-- Company Logo/Name -->
+                <span class="text-slate-800">Shirabayashi Corp.</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <!-- Desktop Language Switcher -->
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                    <option value="en" selected>English</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh">中文</option>
+                </select>
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_en.html" class="text-slate-600 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="about_en.html" class="text-slate-600 hover:text-blue-600 transition-colors">About Us</a>
+                    <a href="contact_en.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <!-- Mobile Language Switcher -->
+            <select id="language-switcher-mobile" class="block w-full bg-white border-b border-gray-200 py-2 px-6 focus:outline-none">
+                    <option value="en" selected>English</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh">中文</option>
+            </select>
+            <a href="services_en.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">Services</a>
+            <a href="about_en.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">About Us</a>
+            <a href="contact_en.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-white shadow-md py-12">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-extrabold color-primary-text text-center">Japan Mail Forwarding Service</h1>
+            <p class="mt-3 text-lg text-slate-600 text-center">Safe receipt and forwarding of mail and packages within Japan for customers residing overseas.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- Breadcrumbs -->
+        <div class="text-sm text-slate-500 mb-6">
+            <a href="services_en.html" class="hover:text-blue-600">Services</a> &gt; Japan Mail Forwarding Service
+        </div>
+
+        <section id="service-details" class="mb-16 bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-500">
+            <h2 class="text-3xl font-bold color-primary-text mb-6">
+                Service Features and Mechanism
+            </h2>
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <span class="text-4xl text-red-500 font-bold">1</span>
+                    <h3 class="font-semibold text-xl mt-2 text-slate-800">Dedicated Address Provision</h3>
+                    <p class="text-sm text-slate-600">We provide a dedicated physical address in Japan for customers to ensure safe and reliable receipt of mail.</p>
+                </div>
+                <div class="text-center">
+                    <span class="text-4xl text-red-500 font-bold">2</span>
+                    <h3 class="font-semibold text-xl mt-2 text-slate-800">Efficient Forwarding</h3>
+                    <p class="text-sm text-slate-600">We efficiently handle forwarding procedures to anywhere in the world, based on the frequency and method you desire.</p>
+                </div>
+                <div class="text-center">
+                    <span class="text-4xl text-red-500 font-bold">3</span>
+                    <h3 class="font-semibold text-xl mt-2 text-slate-800">Strict Confidentiality</h3>
+                    <p class="text-sm text-slate-600">We strictly adhere to protecting customer privacy and confidential information, ensuring a trustworthy system.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <h3 class="text-2xl font-bold mb-4 color-primary-text">Flow of Service (STEP BY STEP)</h3>
+                <ol class="list-decimal list-inside text-slate-600 space-y-3 text-base pl-4">
+                    <li>**[Application]**: Please apply for the service using the online form.</li>
+                    <li>**[Address Issuance]**: We will issue and contact you with your exclusive Japanese forwarding address.</li>
+                    <li>**[Mail Receipt]**: We receive and securely store mail/packages addressed to you at our location.</li>
+                    <li>**[Forwarding Instruction]**: You instruct us on the forwarding frequency (weekly, monthly, etc.) and destination.</li>
+                    <li>**[Forwarding & Confirmation]**: Based on your instructions, we package and ship the items, providing tracking information.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Fee Structure -->
+        <section id="fee-structure" class="mb-16 bg-white p-8 rounded-xl shadow-lg border-l-4 border-red-500">
+            <h2 class="text-3xl font-bold color-primary-text mb-6">
+                Fee Estimate
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 text-left">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-sm font-semibold text-slate-800 uppercase tracking-wider">
+                                Item
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-sm font-semibold text-slate-800 uppercase tracking-wider">
+                                Details
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-sm font-semibold text-slate-800 uppercase tracking-wider">
+                                Fee (Excluding Tax)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Initial Fee</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">One-time fee at the start of service</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-semibold">¥5,500</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Base Fee (Monthly)</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">Address maintenance, mail receipt, and simple storage fee</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-semibold">¥2,200 ~</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Forwarding Handling Fee</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">Per forwarding procedure</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-semibold">¥1,100</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Actual Cost</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">Actual international shipping costs, packaging materials</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-800">Actual Cost</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-6 text-xs text-slate-500">* Base fee may vary depending on the volume of mail and storage period. Please contact us for details.</p>
+        </section>
+
+        <!-- 通用联系表单模块 (Generic Contact Form Module) -->
+        <section id="contact-form-module" class="mt-16 bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+            <h2 class="text-2xl font-bold color-primary-text mb-6 text-center">Interested in this Service? Contact Us Now</h2>
+            
+            <!-- IMPORTANT: Replace YOUR_FORMSPREE_ENDPOINT with your actual Formspree endpoint -->
+            <form action="https://formspree.io/f/xgvnydqd" method="POST" class="space-y-4 max-w-lg mx-auto">
+                <!-- Hidden Field: Identifies submission source (MUST change VALUE per page!) -->
+                <input type="hidden" name="form_source" value="Japan_Mail_Forwarding_Service_EN" />
+                <input type="hidden" name="form_name" value="Service_Details_EN" />
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name *</label>
+                        <input type="text" id="name" name="Name" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email *</label>
+                        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="Phone_Number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <!-- Wechat ID -->
+                    <div>
+                        <label for="wechat" class="block text-sm font-medium text-slate-700 mb-1">WeChat ID</label>
+                        <input type="text" id="wechat" name="WeChat_ID" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                
+                <!-- Inquiry Subject (Dropdown) -->
+                <div>
+                    <label for="inquiry-subject" class="block text-sm font-medium text-slate-700 mb-1">Inquiry Subject *</label>
+                    <select id="inquiry-subject" name="Inquiry_Subject" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="" disabled selected>Please select your inquiry subject...</option>
+                        <option value="Initial_Monthly_Fee">Initial and Monthly Fee Inquiry</option>
+                        <option value="Forwarding_Frequency">Forwarding Frequency and Method</option>
+                        <option value="Size_Limits">Size/Weight Limits for Packages</option>
+                        <option value="General_Inquiry">General Inquiry</option>
+                    </select>
+                </div>
+
+                <!-- Specific Message/Details -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Specific Message/Details</label>
+                    <textarea id="message" name="Specific_Message" rows="3" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                
+                <div class="text-center pt-4">
+                    <button type="submit" class="bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                        Submit Inquiry
+                    </button>
+                </div>
+            </form>
+        </section>
+        <!-- End of Generic Contact Form Module -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 Shirabayashi Corporation. All Rights Reserved.</p>
+            <div class="mt-3 space-x-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Use</a>
+                <a href="about_en.html" class="text-slate-400 hover:text-white transition-colors">About Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
+        const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+
+        // Toggle mobile menu
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Language switching logic
+        function handleLanguageChange(event) {
+            const selectedLanguage = event.target.value;
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+            // Determine the base filename (e.g., mail-forwarding_ja.html -> mail-forwarding)
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+
+            // Construct the new URL
+            let newFile = '';
+            if (selectedLanguage === 'ja') {
+                newFile = (baseFile === 'index' || baseFile === 'index_en') ? 'index.html' : baseFile + '_ja.html';
+            } else if (selectedLanguage === 'en') {
+                newFile = baseFile + '_en.html';
+            } else if (selectedLanguage === 'zh') {
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
+            }
+        }
+
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    </script>
+</body>
+</html>
