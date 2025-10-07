@@ -3,55 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サービス | 白林株式会社</title>
+    <title>サービス内容 - 白林株式会社</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 设置字体为 Inter、以获得现代感 -->
+    <!-- 设置字体和配色风格 -->
     <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
-            color: #334155;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* 强调色定义 */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        .service-card {
+            border-left-width: 4px;
+        }
+
+        /* 确保所有服务卡片可点击 */
+        .service-card-link {
+            display: block;
+            text-decoration: none;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-slate-800">
 
     <!-- ナビゲーションバー (导航栏) -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
                 <!-- 会社 ロゴ/名称 -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                白林株式会社
+                <span class="text-slate-800">白林株式会社</span>
             </a>
             <div class="flex items-center space-x-6">
                 <!-- デスクトップ版言語選択 -->
-                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="ja" selected>日本語</option>
                     <option value="en">English</option>
                     <option value="zh">中文</option>
                 </select>
-                <div class="hidden md:flex space-x-6">
-                    <a href="services_ja.html" class="text-teal-500 font-medium transition-colors">サービス</a>
-                    <a href="about_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">会社概要</a>
-                    <a href="contact_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">お問い合わせ</a>
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_ja.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">サービス</a>
+                    <a href="about_ja.html" class="text-slate-600 hover:text-blue-600 transition-colors">会社概要</a>
+                    <a href="contact_ja.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">お問い合わせ</a>
                 </div>
                 <!-- モバイルメニューボタン -->
                 <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
@@ -69,125 +67,187 @@
                 <option value="en">English</option>
                 <option value="zh">中文</option>
             </select>
-            <a href="services_ja.html" class="block px-6 py-2 text-teal-500 hover:bg-gray-100">サービス</a>
+            <a href="services_ja.html" class="block px-6 py-2 text-blue-600 bg-gray-50 font-semibold">サービス</a>
             <a href="about_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">会社概要</a>
-            <a href="contact_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">お問い合わせ</a>
+            <a href="contact_ja.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">お問い合わせ</a>
         </div>
     </nav>
-    
-    <!-- サービス -->
-    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">サービス</h2>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- サービスカード 1: 日本文化体験と探求 (リンク先: cultural-experiences_ja.html) -->
-                <a href="cultural-experiences_ja.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">日本文化体験と探求</h3>
-                    <p class="mt-4 text-slate-600">中学生向け夏/冬期キャンプ、コスプレ文化体験など、日本の文化を深く体験するプログラムです。</p>
-                </a>
-                <!-- サービスカード 2: 日本語学習 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <line x1="10" y1="9" x2="8" y2="9"></line>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">日本語学習</h3>
-                    <p class="mt-4 text-slate-600">初心者から上級者まで、個々のレベルに合わせた日本語学習プログラムを提供します。経験豊富な講師陣が、あなたの日本語スキル向上をサポートします。</p>
-                </div>
-                <!-- サービスカード 3: 日本の不動産関連代行サービス -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">日本の不動産関連代行サービス</h3>
-                    <p class="mt-4 text-slate-600">物件探しから契約手続き、住宅ローンの手配まで、日本の不動産に関するあらゆる事務手続きを代行します。安心して日本での住まいを見つけられます。</p>
-                </div>
-                <!-- サービスカード 4: 日本郵便物転送サービス (已修改，链接到 mail-forwarding_ja.html) -->
-                <a href="mail-forwarding_ja.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
-                            <path d="M17 12a5 5 0 0 0-10 0"></path>
-                            <line x1="12" y1="22" x2="12" y2="12"></line>
-                            <line x1="12" y1="2" x2="12" y2="10"></line>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">日本郵便物転送サービス</h3>
-                    <p class="mt-4 text-slate-600">日本国内の私書箱と郵便物・荷物の受け取り、国際転送サービスを提供します。安心の住所管理を実現します。</p>
-                </a>
-                <!-- サービスカード 5: 日本庭園、ゴルフなどの研修旅行 (链接先: training-trips_ja.html) -->
-                <a href="training-trips_ja.html" class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl block">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="16" x2="12" y2="12"></line>
-                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">研修旅行（日本庭園、ゴルフなど）</h3>
-                    <p class="mt-4 text-slate-600">日本庭園の歴史や造園技術、ゴルフのスキル向上など、特定のテーマに特化した研修旅行を企画・実施します。専門家による指導で、深い学びと体験を得られます。</p>
-                </a>
-                <!-- サービスカード 6: ニュージーランド留学、文化交流と体験の企画・実施 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 19H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2z"></path>
-                            <path d="M7 17v-5M11 17v-1M15 17v-3"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">ニュージーランド留学、文化交流と体験の企画・実施</h3>
-                    <p class="mt-4 text-slate-600">ニュージーランドへの留学サポートから、マオリ文化、アドベンチャースポーツなどの文化交流・体験プログラムの企画・実施まで、包括的に支援します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- フッター -->
-    <footer class="bg-slate-900 text-white py-12 md:py-16">
+    <!-- ページヘッダー (Page Header) -->
+    <header class="bg-white shadow-md py-12">
         <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-extrabold color-primary-text">コアサービス一覧</h1>
+            <p class="mt-3 text-lg text-slate-600">多岐にわたる分野で、お客様の目標達成を支援する専門的なコンサルティングおよび実行サポートを提供します。</p>
+        </div>
+    </header>
+
+    <!-- サービスセクション (Service Sections) -->
+    <main class="container mx-auto px-6 py-16">
+        
+        <!-- サービスカテゴリ 1: 文化体験・研修旅行 -->
+        <section id="culture" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 color-primary-text border-l-4 border-red-500 pl-4">
+                01. 文化体験・研修旅行
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1.1: 日本深度文化体験 (链接到 cultural-experiences_ja.html) -->
+                <a href="cultural-experiences_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">日本深度文化体験と探求</h3>
+                        <p class="text-sm text-slate-600">茶道、華道、着物、日式料理、若者文化（Cosplay, 漫画）など、深い文化理解と実践の機会を提供します。</p>
+                    </div>
+                </a>
+                <!-- Service 1.2: ニュージーランド留学と交流 (链接到 new-zealand-study_ja.html) -->
+                <a href="new-zealand-study_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">ニュージーランド留学と交流</h3>
+                        <p class="text-sm text-slate-600">留学コンサルティング、文化交流プログラムの企画・実施、および現地での生活サポートを行います。</p>
+                    </div>
+                </a>
+                <!-- Service 1.3: 専門テーマ研修 (链接到 training-trips_ja.html) -->
+                <a href="training-trips_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">専門テーマ研修旅行</h3>
+                        <p class="text-sm text-slate-600">日本庭園芸術、高爾夫初級レッスン、温泉療養など、オーダーメイドの専門研修旅行を企画・実施します。</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- サービスカテゴリ 2: 語学・文筆サポート -->
+        <section id="language" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 color-primary-text border-l-4 border-blue-500 pl-4">
+                02. 語学・文筆サポートサービス
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 2.1: 日本語学習・学校仲介 (链接到 language-services_ja.html) -->
+                <a href="language-services_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">日本語学習・学校仲介</h3>
+                        <p class="text-sm text-slate-600">基礎からビジネスレベルまでの日本語学習支援と、優良な日本語学校への入学手続きを代行します。</p>
+                    </div>
+                </a>
+                <!-- Service 2.2: 日本語・日本文書の翻訳 (链接到 translation-services_ja.html) -->
+                <a href="translation-services_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">日本語・日本文書の翻訳</h3>
+                        <p class="text-sm text-slate-600">公的書類、契約書、技術マニュアルなど、専門性の高い文書の翻訳を迅速かつ正確に提供します。</p>
+                    </div>
+                </a>
+                <!-- Service 2.3: 日本郵便物転送サービス (链接到 mail-forwarding_ja.html) -->
+                <a href="mail-forwarding_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">日本郵便物転送サービス</h3>
+                        <p class="text-sm text-slate-600">海外在住のお客様向けに、日本国内の住所提供、郵便物・荷物の管理、安全な国際転送サービスを提供します。</p>
+                    </div>
+                </a>
+                <!-- Service 2.4: 商务会议组织 (链接到 contact_ja.html - 咨询) -->
+                <a href="contact_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-blue-500">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">ビジネス会議 tổ 織</h3>
+                        <p class="text-sm text-slate-600">海外投資の商談、経営戦略会議、技術コンサルティング会議の会場手配、通訳・議事録作成サポートを行います。</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- サービスカテゴリ 3: 不動産・総合管理 -->
+        <section id="realestate" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 color-primary-text border-l-4 border-yellow-500 pl-4">
+                03. 不動産・総合管理サービス
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 3.1: 不動産売買と賃貸 (链接到 real-estate-maintenance_ja.html) -->
+                <a href="real-estate-maintenance_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                        <h3 class="text-xl font-semibold mb-2 text-yellow-600">不動産売買と賃貸仲介</h3>
+                        <p class="text-sm text-slate-600">住宅・商業不動産の売買、賃貸仲介、法律・金融コンサルティングを提供します。</p>
+                    </div>
+                </a>
+                <!-- Service 3.2: 施設管理と運営 (链接到 contact_ja.html - 咨询) -->
+                <a href="contact_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                        <h3 class="text-xl font-semibold mb-2 text-yellow-600">施設管理と運営</h3>
+                        <p class="text-sm text-slate-600">ホテル、民宿など宿泊施設の運営管理、および不動産全般の維持メンテナンスを代行します。</p>
+                    </div>
+                </a>
+                <!-- Service 3.3: 施設メンテナンスと代行 (链接到 real-estate-maintenance_ja.html) -->
+                <a href="real-estate-maintenance_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                        <h3 class="text-xl font-semibold mb-2 text-yellow-600">施設メンテナンス・代行</h3>
+                        <p class="text-sm text-slate-600">物件の維持、庭の手入れ、雑草処理、および退去手続き等の総合的な管理を代行します。</p>
+                    </div>
+                </a>
+                <!-- Service 3.4: その他多様な事業 (链接到 contact_ja.html - 咨询) -->
+                <a href="contact_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-yellow-500">
+                        <h3 class="text-xl font-semibold mb-2 text-yellow-600">その他多様な事業</h3>
+                        <p class="text-sm text-slate-600">国際芸術交流、輸出入貿易、金融、介護、美容・整体院運営など、広範囲な事業をサポートします。</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="mt-16 text-center p-8 rounded-lg bg-blue-500 text-white shadow-xl">
+            <h3 class="text-2xl font-bold mb-4">お探しのサービスが見つかりませんか？</h3>
+            <p class="mb-6">カスタムメイドのソリューションをご提案いたします。お気軽にご相談ください。</p>
+            <a href="contact_ja.html" class="inline-block bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                今すぐ問い合わせる
+            </a>
+        </section>
+    </main>
+
+    <!-- フッター (Footer - 与 index.html 保持一致) -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
-            <div class="mt-4 space-x-4">
+            <div class="mt-3 space-x-4">
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">プライバシーポリシー</a>
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">利用規約</a>
+                <a href="about_ja.html" class="text-slate-400 hover:text-white transition-colors">会社概要</a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript 用于移动端メニューと言語切り替え -->
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
     <script>
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
         const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
 
-        // 携帯電話メニュー切り替え
+        // Toggle mobile menu
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
         
-        // 言語切り替え機能
+        // Language switching logic
         function handleLanguageChange(event) {
             const selectedLanguage = event.target.value;
-            // 根据选择的语言重定向到对应的ページ
+            // Get the current page filename (e.g., services_ja.html)
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+            // Determine the base filename (e.g., services_ja.html -> services)
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                // Handle index.html or other un-suffixed files
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+
+            // Construct the new URL
+            let newFile = '';
             if (selectedLanguage === 'ja') {
-                window.location.href = 'services_ja.html';
+                newFile = (baseFile === 'index' || baseFile === 'index_ja') ? 'index.html' : baseFile + '_ja.html';
             } else if (selectedLanguage === 'en') {
-                window.location.href = 'services_en.html';
+                newFile = baseFile + '_en.html';
             } else if (selectedLanguage === 'zh') {
-                window.location.href = 'services_zh.html';
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
             }
         }
 
@@ -196,4 +256,3 @@
     </script>
 </body>
 </html>
-
