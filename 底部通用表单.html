@@ -1,0 +1,65 @@
+<!-- 通用联系表单模块 -->
+<section id="contact-form-module" class="mt-16 bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+    <h2 class="text-2xl font-bold color-primary-text mb-6 text-center">对该服务感兴趣？立即咨询</h2>
+    
+    <!-- IMPORTANT: Replace YOUR_FORMSPREE_ENDPOINT with your actual Formspree endpoint -->
+    <form action="https://formspree.io/f/xwprqkev" method="POST" class="space-y-4 max-w-lg mx-auto">
+        <!-- 隐藏字段：用于在 Formspree 邮件中标识提交来源（请根据页面修改 value） -->
+        <input type="hidden" name="form_source" value="请在这里标记该页面的名称" />
+        <input type="hidden" name="form_name" value="服务详情页通用咨询" />
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- 姓名 -->
+            <div>
+                <label for="name" class="block text-sm font-medium text-slate-700 mb-1">姓名 *</label>
+                <input type="text" id="name" name="姓名" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <!-- 电子邮箱 -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">电子邮箱 *</label>
+                <input type="email" id="email" name="电子邮箱" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- 电话号码 -->
+            <div>
+                <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">电话号码</label>
+                <input type="tel" id="phone" name="电话号码" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <!-- 微信账户 -->
+            <div>
+                <label for="wechat" class="block text-sm font-medium text-slate-700 mb-1">微信账户</label>
+                <input type="text" id="wechat" name="微信账户" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+        </div>
+        
+        <!-- 咨询项目 (下拉菜单) -->
+        <div>
+            <label for="inquiry-subject" class="block text-sm font-medium text-slate-700 mb-1">咨询项目 *</label>
+            <select id="inquiry-subject" name="咨询项目" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                <option value="" disabled selected>请选择您感兴趣的项目...</option>
+                <option value="日本文化体验">日本文化体验（夏/冬令营，Cosplay）</option>
+                <option value="日语学习与翻译">日语学习与翻译服务</option>
+                <option value="不动产维护管理">不动产维护与管理</option>
+                <option value="主题研修旅行">主题研修旅行（高尔夫，庭园）</option>
+                <option value="新西兰留学/交流">新西兰留学/交流</option>
+                <option value="进出口与多元业务">进出口与多元业务</option>
+                <option value="其他合作咨询">其他合作咨询</option>
+            </select>
+        </div>
+        
+        <!-- 具体需求/留言 -->
+        <div>
+            <label for="message" class="block text-sm font-medium text-slate-700 mb-1">具体需求/留言</label>
+            <textarea id="message" name="具体需求" rows="3" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+        </div>
+        
+        <div class="text-center pt-4">
+            <button type="submit" class="bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                提交咨询
+            </button>
+        </div>
+    </form>
+</section>
+<!-- 通用联系表单模块 END -->
