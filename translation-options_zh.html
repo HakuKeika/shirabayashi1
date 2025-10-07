@@ -139,7 +139,10 @@
 
             <!-- Formspree 集成表单 -->
             <!-- IMPORTANT: Replace YOUR_FORMSPREE_ENDPOINT with your actual Formspree endpoint -->
-            <form action="https://formspree.io/f/xwprqkev" method="POST" class="space-y-6">
+           <form action="https://formspree.io/f/xgvnydqd" method="POST" class="space-y-4 max-w-lg mx-auto">
+        <!-- 隐藏字段：用于在 Formspree 邮件中标识提交来源（请根据页面修改 value） -->
+        <input type="hidden" name="form_source" value="翻译服务" />
+        <input type="hidden" name="form_name" value="服务详情页通用咨询" />
                 
                 <!-- 客户信息 -->
                 <div class="form-section p-4 bg-gray-50 rounded-md">
@@ -272,4 +275,5 @@
     </script>
 </body>
 </html>
+
 
