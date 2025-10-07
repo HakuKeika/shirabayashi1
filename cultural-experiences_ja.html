@@ -3,55 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>日本文化体験と探求 | 白林株式会社</title>
+    <title>文化体験 | 白林株式会社</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 设置字体为 Inter，以获得现代感 -->
+    <!-- 设置字体和配色风格 -->
     <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
-            color: #334155;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* 强调色定义 */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        /* 确保所有服务卡片可点击 */
+        .service-card-link {
+            display: block;
+            text-decoration: none;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-slate-800">
 
     <!-- ナビゲーションバー (导航栏) -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
                 <!-- 会社 ロゴ/名称 -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                白林株式会社
+                <span class="text-slate-800">白林株式会社</span>
             </a>
             <div class="flex items-center space-x-6">
                 <!-- デスクトップ版言語選択 -->
-                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="ja" selected>日本語</option>
                     <option value="en">English</option>
                     <option value="zh">中文</option>
                 </select>
-                <div class="hidden md:flex space-x-6">
-                    <a href="services_ja.html" class="text-teal-500 font-medium transition-colors">サービス</a>
-                    <a href="about_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">会社概要</a>
-                    <a href="contact_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">お問い合わせ</a>
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_ja.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">サービス</a>
+                    <a href="about_ja.html" class="text-slate-600 hover:text-blue-600 transition-colors">会社概要</a>
+                    <a href="contact_ja.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">お問い合わせ</a>
                 </div>
                 <!-- モバイルメニューボタン -->
                 <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
@@ -69,87 +63,172 @@
                 <option value="en">English</option>
                 <option value="zh">中文</option>
             </select>
-            <a href="services_ja.html" class="block px-6 py-2 text-teal-500 hover:bg-gray-100">サービス</a>
+            <a href="services_ja.html" class="block px-6 py-2 text-blue-600 bg-gray-50 font-semibold">サービス</a>
             <a href="about_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">会社概要</a>
-            <a href="contact_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">お問い合わせ</a>
+            <a href="contact_ja.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">お問い合わせ</a>
         </div>
     </nav>
     
-    <!-- メインセクション -->
-    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
+    <!-- ページヘッダー (Page Header) -->
+    <header class="bg-white shadow-md py-12">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">日本文化体験と探求</h2>
-            <div class="mt-12 max-w-4xl mx-auto text-center">
-                <p class="text-lg text-slate-600">
-                    日本文化を深く理解するための体験プログラムをご用意しました。
-                </p>
+            <div class="text-sm text-slate-500 mb-2">
+                <a href="services_ja.html" class="hover:text-blue-600">サービス</a> &gt; 日本文化体験
             </div>
-            
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- サブページ 1: 中学生夏・冬期キャンプ -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">中学生向け夏・冬期キャンプ</h3>
-                    <p class="mt-4 text-slate-600">
-                        日本の歴史、文化、そして現代の生活を体験できる集中キャンプです。
-                    </p>
-                </div>
-
-                <!-- サブページ 2: コスプレ文化体験 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-teal-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800">コスプレ文化体験</h3>
-                    <p class="mt-4 text-slate-600">
-                        日本のポップカルチャーを代表するコスプレ文化を体験し、創造的な自己表現の楽しさを発見します。
-                    </p>
-                </div>
-            </div>
-            
+            <h1 class="text-4xl font-extrabold color-primary-text">日本文化体験と探求</h1>
+            <p class="mt-3 text-lg text-slate-600">伝統から現代ポップカルチャーまで、日本の魅力を深く体験するプログラムをご用意しています。</p>
         </div>
-    </section>
+    </header>
 
-    <!-- フッター -->
-    <footer class="bg-slate-900 text-white py-12 md:py-16">
-        <div class="container mx-auto px-6 text-center">
+    <!-- メインコンテンツ -->
+    <main class="container mx-auto px-6 py-16">
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold color-primary-text mb-8 border-l-4 border-red-500 pl-4">
+                プログラム一覧
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. 中学生夏/冬令营 (リンク先: student-camps_ja.html - 占位符) -->
+                <a href="student-camps_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">中学生 夏・冬令キャンプ</h3>
+                        <p class="text-sm text-slate-600">日本の学校生活、伝統文化、歴史的建造物の訪問などを通じて、異文化交流と学習を促進します。</p>
+                        <span class="mt-4 inline-block text-blue-600 font-semibold text-sm hover:underline">詳細を見る →</span>
+                    </div>
+                </a>
+                
+                <!-- 2. Cosplay 文化体験 (リンク先: cosplay-experience_ja.html) -->
+                <a href="cosplay-experience_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">Cosplay 文化体験ツアー</h3>
+                        <p class="text-sm text-slate-600">大阪発着！衣装制作、プロの指導による撮影体験、そして関西地方の観光を組み合わせたユニークなツアー。</p>
+                        <span class="mt-4 inline-block text-blue-600 font-semibold text-sm hover:underline">詳細を見る →</span>
+                    </div>
+                </a>
+                
+                <!-- 3. 日本漫画聖地巡礼ツアー (リンク先: manga-tour_ja.html) -->
+                <a href="manga-tour_ja.html" class="service-card-link">
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 service-card border-red-500">
+                        <h3 class="text-xl font-semibold mb-2 text-red-600">日本漫画聖地巡礼ツアー</h3>
+                        <p class="text-sm text-slate-600">人気漫画の舞台や、アニメ制作の裏側を巡る旅。オタク文化の発祥地を深く探求します。</p>
+                        <span class="mt-4 inline-block text-blue-600 font-semibold text-sm hover:underline">詳細を見る →</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+        
+        <!-- 通用联系表单模块 (Formspree Endpoint) -->
+        <section id="contact-form-module" class="mt-16 bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+            <h2 class="text-2xl font-bold color-primary-text mb-6 text-center">このプログラムに興味がありますか？今すぐお問い合わせください</h2>
+            
+            <!-- IMPORTANT: Replace YOUR_FORMSPREE_ENDPOINT with your actual Formspree endpoint -->
+            <form action="https://formspree.io/f/xgvnydqd" method="POST" class="space-y-4 max-w-lg mx-auto">
+                <!-- 隐藏字段：标识表单来源 (务必修改这里的 VALUE!) -->
+                <input type="hidden" name="form_source" value="文化体験と探求ページ" />
+                <input type="hidden" name="form_name" value="サービス詳細ページ" />
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- お名前 -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">お名前 *</label>
+                        <input type="text" id="name" name="お名前" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <!-- メールアドレス -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">メールアドレス *</label>
+                        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 電話番号 -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">電話番号</label>
+                        <input type="tel" id="phone" name="電話番号" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <!-- Wechat ID -->
+                    <div>
+                        <label for="wechat" class="block text-sm font-medium text-slate-700 mb-1">WeChat ID</label>
+                        <input type="text" id="wechat" name="WeChat_ID" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                
+                <!-- お問い合わせ種別 (下拉菜单) -->
+                <div>
+                    <label for="inquiry-subject" class="block text-sm font-medium text-slate-700 mb-1">お問い合わせ項目 *</label>
+                    <select id="inquiry-subject" name="お問い合わせ項目" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="" disabled selected>プログラムを選択してください...</option>
+                        <option value="中学生キャンプ">中学生 夏・冬令キャンプ</option>
+                        <option value="Cosplayツアー">Cosplay 文化体験ツアー</option>
+                        <option value="漫画巡礼ツアー">日本漫画聖地巡礼ツアー</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <!-- 具体的なお問い合わせ内容 -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">具体的なお問い合わせ内容</label>
+                    <textarea id="message" name="具体的なお問い合わせ内容" rows="3" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                
+                <div class="text-center pt-4">
+                    <button type="submit" class="bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                        送信
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- フッター (Footer) -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
-            <div class="mt-4 space-x-4">
+            <div class="mt-3 space-x-4">
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">プライバシーポリシー</a>
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">利用規約</a>
+                <a href="about_ja.html" class="text-slate-400 hover:text-white transition-colors">会社概要</a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript 用于移动端菜单和语言切换 -->
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
     <script>
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
         const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
-        
-        // 移动端菜单切换
+
+        // Toggle mobile menu
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
         
-        // 语言切换功能
+        // Language switching logic
         function handleLanguageChange(event) {
             const selectedLanguage = event.target.value;
-            // 根据选择的语言重定向到对应的页面
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+            // Determine the base filename (e.g., cultural-experiences_ja.html -> cultural-experiences)
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+
+            // Construct the new URL
+            let newFile = '';
             if (selectedLanguage === 'ja') {
-                window.location.href = 'cultural-experiences_ja.html';
+                newFile = (baseFile === 'index' || baseFile === 'index_ja') ? 'index.html' : baseFile + '_ja.html';
             } else if (selectedLanguage === 'en') {
-                window.location.href = 'cultural-experiences_en.html';
+                newFile = baseFile + '_en.html';
             } else if (selectedLanguage === 'zh') {
-                window.location.href = 'cultural-experiences.html';
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
             }
         }
 
