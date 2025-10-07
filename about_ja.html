@@ -6,52 +6,46 @@
     <title>会社概要 | 白林株式会社</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 设置字体为 Inter，以获得现代感 -->
+    <!-- 设置字体和配色风格 -->
     <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
-            color: #334155;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Dark Slate */
+        }
+
+        /* 强调色定义 */
+        .color-primary { color: #3b82f6; } /* Blue-500 */
+        .color-primary-text { color: #3b82f6; }
+        .color-secondary { background-color: #ef4444; } /* Red-500 for emphasis */
+
+        /* 确保所有服务卡片可点击 */
+        .service-card-link {
+            display: block;
+            text-decoration: none;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-slate-800">
 
     <!-- ナビゲーションバー (导航栏) -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-extrabold text-slate-800 tracking-wider">
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-t-4 border-blue-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-800 tracking-wide flex items-center">
                 <!-- 会社 ロゴ/名称 -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                白林株式会社
+                <span class="text-slate-800">白林株式会社</span>
             </a>
             <div class="flex items-center space-x-6">
                 <!-- デスクトップ版言語選択 -->
-                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <select id="language-switcher-desktop" class="hidden md:block bg-white border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="ja" selected>日本語</option>
                     <option value="en">English</option>
                     <option value="zh">中文</option>
                 </select>
-                <div class="hidden md:flex space-x-6">
-                    <a href="services_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">サービス</a>
-                    <a href="about_ja.html" class="text-teal-500 font-medium transition-colors">会社概要</a>
-                    <a href="contact_ja.html" class="text-slate-600 hover:text-teal-500 font-medium transition-colors">お問い合わせ</a>
+                <div class="hidden md:flex space-x-4 text-sm font-medium">
+                    <a href="services_ja.html" class="text-slate-600 hover:text-blue-600 transition-colors">サービス</a>
+                    <a href="about_ja.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">会社概要</a>
+                    <a href="contact_ja.html" class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition-colors">お問い合わせ</a>
                 </div>
                 <!-- モバイルメニューボタン -->
                 <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
@@ -70,62 +64,107 @@
                 <option value="zh">中文</option>
             </select>
             <a href="services_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">サービス</a>
-            <a href="about_ja.html" class="block px-6 py-2 text-teal-500 hover:bg-gray-100">会社概要</a>
-            <a href="contact_ja.html" class="block px-6 py-2 text-slate-600 hover:bg-gray-100">お問い合わせ</a>
+            <a href="about_ja.html" class="block px-6 py-2 text-blue-600 bg-gray-50 font-semibold">会社概要</a>
+            <a href="contact_ja.html" class="block px-6 py-2 text-red-600 hover:bg-red-50">お問い合わせ</a>
         </div>
     </nav>
     
-    <!-- 会社概要 -->
-    <section class="py-16 md:py-24 bg-gray-100 animate-fade-in">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800">会社概要</h2>
-            <div class="mt-12 max-w-4xl mx-auto text-center">
-                <p class="text-lg text-slate-600">
-                    当社は2012年に設立されて以来、日本文化の普及に尽力してまいりました。同時に、日本に滞在する外国人が日本を効果的に理解し、文化に溶け込めるような関連サービスを提供しています。
+    <!-- ページヘッダー (Page Header) -->
+    <header class="bg-white shadow-md py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-extrabold color-primary-text">会社概要</h1>
+            <p class="mt-3 text-lg text-slate-600">白林株式会社の設立、理念、および事業範囲についてご紹介します。</p>
+        </div>
+    </header>
+
+    <!-- 会社概要詳細セクション -->
+    <main class="container mx-auto px-6 py-16">
+        <section class="max-w-4xl mx-auto space-y-12">
+            <!-- 理念と沿革 -->
+            <div class="bg-white p-8 rounded-lg shadow-xl border-l-4 border-blue-500">
+                <h2 class="text-3xl font-bold color-primary-text mb-4">理念と沿革</h2>
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    当社は<span class="font-bold">2012年</span>に設立されて以来、一貫して日本文化の普及と国際的な相互理解の促進に尽力してまいりました。
+                    特に、日本に滞在する外国人の方が、当社のサービスを通じて日本を効果的に理解し、スムーズに文化に溶け込めるようサポートすることを使命としています。
                 </p>
-                <p class="mt-4 text-lg text-slate-600">
-                    当社の事業は多岐にわたり、国内外の商習慣、生活習慣、語学学習に関する研修・企画から、海外投資・経営・技術コンサルティングに関する会議の組織、国際芸術交流事業の企画・立案まで幅広く手掛けています。
-                </p>
-                <p class="mt-4 text-lg text-slate-600">
-                    また、EC事業、翻訳サービス、不動産の売買・賃貸・仲介・管理、私書箱サービス、ホテルやレンタルハウス等の宿泊施設運営も行っています。さらに、環境用品、電化製品、医療機器、医薬品、化粧品、食品、衣料品、日用雑貨、酒類、中古品の輸出入および販売、旅行業務、語学教室、飲食店経営、運送業、介護、労働者派遣、国際結婚、金融、美容院・整体院の経営、木材加工、資源廃棄物の回収など、多様な分野で事業を展開しています。
+                <p class="mt-4 text-lg text-slate-700 leading-relaxed">
+                    事業開始以来、私たちは文化的な壁を取り払い、お客様がより豊かで繋がりのある生活を送れる世界の創造を目指し、信頼されるパートナーであり続けています。
                 </p>
             </div>
-        </div>
-    </section>
 
-    <!-- フッター -->
-    <footer class="bg-slate-900 text-white py-12 md:py-16">
-        <div class="container mx-auto px-6 text-center">
+            <!-- 事業範囲 -->
+            <div class="bg-white p-8 rounded-lg shadow-xl border-l-4 border-red-500">
+                <h2 class="text-3xl font-bold color-primary-text mb-4">広範な事業領域</h2>
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    当社の事業は、日本国内および海外の商慣習、生活習慣、語学学習に関連する研修および企画に始まり、以下の多岐にわたる領域をカバーしています：
+                </p>
+                <ul class="mt-6 space-y-3 text-slate-700 list-disc list-inside ml-4">
+                    <li><span class="font-semibold">国際ビジネス支援:</span> 海外投資、経営・技術コンサルティング関連会議の組織。</li>
+                    <li><span class="font-semibold">文化・芸術事業:</span> 国際芸術交流事業の企画・立案。</li>
+                    <li><span class="font-semibold">貿易・流通:</span> ネットワーク販売、環境用品、電化製品、医療機器、医薬品、化粧品、食品、衣料品、日用雑貨、酒類、中古品の輸出入および販売。</li>
+                    <li><span class="font-semibold">不動産サービス:</span> 不動産の売買、賃貸、仲介、管理、およびホテル、貸別荘等の宿泊施設経営と管理。</li>
+                    <li><span class="font-semibold">生活サポート:</span> 郵便物の受取代行（私書箱）、運輸業、言語教室、飲食店経営。</li>
+                    <li><span class="font-semibold">専門・人材サービス:</span> 翻訳、介護、労働者派遣、国際結婚関連の企画とサービス、金融業、美容院・整体院の経営、木材加工、資源廃棄物の回収。</li>
+                </ul>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center pt-8">
+                <a href="services_ja.html" class="bg-red-500 text-white font-bold py-3 px-8 rounded-md shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105">
+                    全サービスを見る
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター (Footer - 与 index.html 保持一致) -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2024 白林株式会社. All Rights Reserved.</p>
-            <div class="mt-4 space-x-4">
+            <div class="mt-3 space-x-4">
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">プライバシーポリシー</a>
                 <a href="#" class="text-slate-400 hover:text-white transition-colors">利用規約</a>
+                <a href="about_ja.html" class="text-slate-400 hover:text-white transition-colors">会社概要</a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript 用于移动端菜单和语言切换 -->
+    <!-- JavaScript for Mobile Menu and Language Switcher -->
     <script>
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const languageSwitcherDesktop = document.getElementById('language-switcher-desktop');
         const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
 
-        // 移动端菜单切换
+        // Toggle mobile menu
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
         
-        // 语言切换功能
+        // Language switching logic
         function handleLanguageChange(event) {
             const selectedLanguage = event.target.value;
-            // 根据选择的语言重定向到对应的页面
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+            // Determine the base filename (e.g., about_ja.html -> about)
+            let baseFile = currentFile.replace(/_(ja|en|zh)\.html$/, '');
+            if (baseFile === currentFile || baseFile === "") {
+                baseFile = currentFile.includes('.') ? currentFile.split('.')[0] : 'index'; 
+            }
+
+            // Construct the new URL
+            let newFile = '';
             if (selectedLanguage === 'ja') {
-                window.location.href = 'about_ja.html';
+                newFile = (baseFile === 'index' || baseFile === 'index_ja') ? 'index.html' : baseFile + '_ja.html';
             } else if (selectedLanguage === 'en') {
-                window.location.href = 'about_en.html';
+                newFile = baseFile + '_en.html';
             } else if (selectedLanguage === 'zh') {
-                window.location.href = 'about.html';
+                newFile = baseFile + '_zh.html'; 
+            }
+
+            if (newFile) {
+                window.location.href = newFile;
             }
         }
 
